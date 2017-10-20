@@ -7,6 +7,5 @@
 	      'celulares#GET' => 'CelularesApiController#getCelulares',
 	      'marcas#GET' => 'MarcasApiController#getMarcas'
 	    ];
-	    
 	}
 ?>

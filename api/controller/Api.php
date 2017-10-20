@@ -14,12 +14,12 @@
     }
 
     private function _requestStatus($code){
-      $status = array(
-        200 => "OK",
-        404 => "Not found",
-        500 => "Internal Server Error"
-      );
-      return ($status[$code])? $status[$code] : $status[500];
-    }
+        $status = array(
+          200 => "OK",
+          404 => "Not found",
+          500 => "Internal Server Error"
+        );
+        return ($status[$code])? $status[$code] : $status[500];
+      }
   }
 ?>

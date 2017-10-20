@@ -1,5 +1,4 @@
-$(document).ready(function() 
-{
+$(document).ready(function() {
 
 	"use strict";
 
@@ -72,8 +71,7 @@ $(document).ready(function()
 			"success" : function(data) {
 				$(".contenedor").html(data);
 				$(".suscripcion").hide();
-				$(".quierosuscribirme").on("click", function ()
-				{
+				$(".quierosuscribirme").on("click", function (){
 					$(".suscripcion").show();
 				});
 			}

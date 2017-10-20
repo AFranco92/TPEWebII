@@ -5,6 +5,7 @@
 	define('ABM', 'http://'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']).'/indexabm');
 
 	class Controller {
+		
 		protected $model;
 		protected $view;
 	}
