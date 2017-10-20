@@ -59,6 +59,16 @@ $(document).ready(function() {
 			"dataType" : "HTML",
 			"success" : function(data) {
 				$(".contenedor").html(data);
+				$(".dofilter").on("click", function() {
+					$.ajax({
+						"url" : "filter",
+						"method" : "GET",
+						"dataType" : "HTML",
+						"success" : function(data) {
+							$(".contenedor").html(data);
+						}
+					});
+				});
 			}
 		});
 	});

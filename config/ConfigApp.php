@@ -8,7 +8,7 @@
             'productos' => 'WebController#productos',
             'comentarios' => 'WebController#comentarios',
             'caracteristicas' => 'WebController#caracteristicas',
-            //'filter' => 'WebController#filter',
+            'filter' => 'WebController#filter',
             'contacto' => 'WebController#contacto',
             'indexabm' => 'CelularesController#indexabm',
             'celulares' => 'CelularesController#index',

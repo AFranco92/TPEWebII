@@ -36,5 +36,14 @@
 	  	public function contacto() {
 	  		$this->view->showContacto();
 	  	}
+
+	  	public function filter() {
+	  		if(isset($_POST['afiltrar'])) {
+	  			$id_marca = $_POST['afiltrar'];
+		  		$celulares = $this->modelcelulares->getCelulares();
+		  		$marcas = $this->modelmarcas->getMarcas();
+		  		$this->view->showCelularesFiltrados($celulares, $marcas, $id_marca);
+		  	}
+	  	}
 	}
  ?>

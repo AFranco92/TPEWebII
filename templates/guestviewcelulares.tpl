@@ -1,6 +1,6 @@
 <h2>{$titulo}</h2>
   <form action="filter" method="POST">
-    <select name="id_marca" class="form-control filter">
+    <select name="afiltrar" class="form-control filter">
       <option value="" selected disabled hidden>Ver por marca</option>
       {foreach from=$marcas item=marca}
       <option value="{$marca['id_marca']}">{$marca['nombre']}</option>

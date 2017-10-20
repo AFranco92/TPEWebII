@@ -26,5 +26,12 @@
 		function showContacto() {
 			$this->smarty->display('templates/web/contacto.tpl');
 		}
+
+		function showCelularesFiltrados($celulares, $marcas, $id_marca) {
+			$this->smarty->assign('id_marca', $id_marca);
+			$this->smarty->assign('celulares', $celulares);
+			$this->smarty->assign('marcas', $marcas);
+			$this->smarty->display('templates/web/filtrocelulares.tpl');
+		}
 	}
  ?>
