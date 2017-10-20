@@ -3,15 +3,19 @@
   require_once('../model/MarcasModel.php');
   require_once('Api.php');
 
-  class MarcasApiController extends Api {
+  class MarcasApiController extends Api 
+  {
     protected $model;
 
-    function __construct() {
+    function __construct() 
+    {
         $this->model = new MarcasModel();
     }
 
-    public function getMarcas($params = []) {
-      switch (sizeof($params)) {
+    public function getMarcas($params = []) 
+    {
+      switch (sizeof($params)) 
+      {
         case 0:
           $marcas = $this->model->getMarcas();
           return $this->json_response($marcas, 200);

@@ -1,16 +1,21 @@
 <?php
-  class SecuredController extends Controller {
+  class SecuredController extends Controller 
+  {
 
-    function __construct() {
+    function __construct() 
+    {
       session_start();
-      if(isset($_SESSION['USER'])){
-        if (time() - $_SESSION['LAST_ACTIVITY'] > 400) {
+      if(isset($_SESSION['USER']))
+      {
+        if (time() - $_SESSION['LAST_ACTIVITY'] > 400) 
+        {
           header('Location: '.LOGOUT);
           die();
         }
         $_SESSION['LAST_ACTIVITY'] = time();
       }
-      else {
+      else 
+      {
         header('Location: '.HOME);
         die();
       }

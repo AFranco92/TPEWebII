@@ -1,6 +1,7 @@
 <?php
 
-  abstract class Api {
+  abstract class Api 
+  {
 
     protected $model;
 

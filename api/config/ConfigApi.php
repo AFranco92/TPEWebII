@@ -1,5 +1,6 @@
 <?php
-	class ConfigApi {
+	class ConfigApi 
+	{
 
 	    public static $RESOURCE = 'resource';
 	    public static $PARAMS = 'params';
@@ -7,5 +8,6 @@
 	      'celulares#GET' => 'CelularesApiController#getCelulares',
 	      'marcas#GET' => 'MarcasApiController#getMarcas'
 	    ];
+	    
 	}
 ?>
