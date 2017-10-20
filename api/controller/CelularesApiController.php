@@ -28,5 +28,8 @@
           break;
       }
     }
+
+    public function deleteTarea() {
+    }
   }
  ?>

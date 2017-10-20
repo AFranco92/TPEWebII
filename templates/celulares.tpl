@@ -8,6 +8,7 @@
         <th>Modelo</th>
         <th>Características</th>
         <th>Precio</th>
+        <th>Marca</th>
         <th><a class="boton addCelular" href="#">[+]</a></th>
       </tr>
     </thead>
@@ -34,6 +35,13 @@
         <td>
           {$celular['precio']}
         </td>
+        {foreach from=$marcas item=marca}
+        {if $celular['id_marca'] == $marca['id_marca']}
+        <td>
+          {$marca['nombre']}
+        </td>
+        {/if}
+        {/foreach}
         {/if}
         <td>
           <a class="boton edit" href="setNoStock/{$celular['id_celular']}">[Sin stock]</a>
