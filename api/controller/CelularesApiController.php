@@ -3,19 +3,15 @@
   require_once('../model/CelularesModel.php');
   require_once('Api.php');
 
-  class CelularesApiController extends Api 
-  {
+  class CelularesApiController extends Api {
     protected $model;
 
-    function __construct() 
-    {
+    function __construct() {
         $this->model = new CelularesModel();
     }
 
-    public function getCelulares($params = []) 
-    {
-      switch (sizeof($params)) 
-      {
+    public function getCelulares($params = []) {
+      switch (sizeof($params)) {
         case 0:
           $celulares = $this->model->getCelulares();
           return $this->json_response($celulares, 200);

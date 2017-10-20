@@ -1,12 +1,10 @@
 <?php 
 	include_once 'libs/Smarty.class.php';
-	class View 
-	{
+	class View {
 
 		protected $smarty;
 
-		function __construct() 
-		{
+		function __construct() {
 			$this->smarty = new Smarty();
 			$this->smarty->assign('titulo', 'Celulares');
 		}

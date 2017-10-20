@@ -1,6 +1,5 @@
 <?php
-	class ConfigApi 
-	{
+	class ConfigApi {
 
 	    public static $RESOURCE = 'resource';
 	    public static $PARAMS = 'params';

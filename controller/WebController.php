@@ -3,45 +3,37 @@
 	include_once 'model/CelularesModel.php';
 	include_once 'model/MarcasModel.php';
 
-	class WebController extends Controller 
-	{
+	class WebController extends Controller {
 
-		function __construct() 
-		{
+		function __construct() {
 	    	$this->view = new WebView();
 	    	$this->modelcelulares = new CelularesModel();
 	    	$this->modelmarcas = new MarcasModel();
 	  	}
 
-	  	public function index() 
-	  	{
+	  	public function index() {
 	  		$this->view->showIndex();
 	  	}
 
-	  	public function home() 
-	  	{
+	  	public function home() {
 	  		$this->view->showHome();
 	  	}
 
-	  	public function productos() 
-	  	{
+	  	public function productos() {
 	  		$this->view->showProductos();
 	  	}
 
-	  	public function comentarios() 
-	  	{
+	  	public function comentarios() {
 	  		$this->view->showComentarios();
 	  	}
 
-	  	public function caracteristicas() 
-	  	{
+	  	public function caracteristicas() {
 	  		$celulares = $this->modelcelulares->getCelulares();
 			$marcas = $this->modelmarcas->getMarcas();
 	  		$this->view->showCaracteristicas($celulares, $marcas);
 	  	}
 
-	  	public function contacto() 
-	  	{
+	  	public function contacto() {
 	  		$this->view->showContacto();
 	  	}
 	}

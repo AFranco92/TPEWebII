@@ -1,22 +1,19 @@
 <?php
 
-  abstract class Api 
-  {
+  abstract class Api {
 
     protected $model;
 
     function __construct(){
     }
 
-    protected function json_response($data, $status) 
-    {
+    protected function json_response($data, $status) {
       header("Content-Type: application/json");
       header("HTTP/1.1 " . $status . " " . $this->_requestStatus($status));
       return json_encode($data);
     }
 
-    private function _requestStatus($code)
-    {
+    private function _requestStatus($code){
       $status = array(
         200 => "OK",
         404 => "Not found",
