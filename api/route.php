@@ -20,7 +20,8 @@ if(isset($_GET['resource']))
 {
   $urlData = parseURL($_GET['resource']);
   $resource = $urlData[ConfigApi::$RESOURCE];
-  if(array_key_exists($resource,ConfigApi::$RESOURCES)){
+  if(array_key_exists($resource,ConfigApi::$RESOURCES))
+  {
     $params = $urlData[ConfigApi::$PARAMS];
     $controller_method = explode('#',ConfigApi::$RESOURCES[$resource]);
     $controller =  new $controller_method[0]();
