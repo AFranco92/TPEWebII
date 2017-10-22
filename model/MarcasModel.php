@@ -16,11 +16,8 @@
 		function setMarca($nombre, $descripcion) {
 			$sentencia = $this->db->prepare('INSERT INTO Marca(nombre, descripcion) VALUES(?,?)');
 			$sentencia->execute([$nombre, $descripcion]);
-		}
-
-		function updateMarca(/*parametros*/) {
-			$sentencia = $this->db->prepare('UPDATE /*parametros*/./*parametros*/ SET /*parametros*/ = ? WHERE /*parametros*/');	
-			$sentencia->execute([/*parametros*/]);
+			$id = $this->db->lastInsertId();
+    		return $this->getMarca($id);
 		}
 
 		function deleteMarca($id_marca) {

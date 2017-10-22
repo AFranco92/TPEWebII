@@ -2,6 +2,8 @@ $(document).ready(function() {
 
 	"use strict";
 
+//Comienzo código navegación web con partial render.
+
 	$(".cargarhome").on("click", function() {
 		$.ajax({
 			"url" : "home",
@@ -12,23 +14,6 @@ $(document).ready(function() {
 			}
 		});
 	});
-
-	// $(".cargarproductos").on("click", function() {
-	// 	$.ajax({
-	// 		"url" : "productos",
-	// 		"method" : "GET",
-	// 		"dataType" : "HTML",
-	// 		"success" : function(data) {
-	// 			$(".contenedor").html(data);
-	// 			$(".info").each(function (){
-	// 				$(this).hide();
-	// 			});
-	// 			$(".masinfo").on("click", function() {	
-	// 			  $(this).prev().toggle();
-	//       		});
-	// 		}
-	// 	});
-	// });
 
 	$(".cargarlogin").on("click", function() {
 		$.ajax({
@@ -126,6 +111,51 @@ $(document).ready(function() {
 						}
 					});
 				});
+			}
+		});
+	});
+
+	//Final código navegación web con partial render.
+
+	//Pruebo rest.
+
+	$(".probandorest").on("click", function() {
+		$.ajax({
+			"url" : "",
+			"method" : "GET",
+			"dataType" : "HTML",
+			"success" : function(data, textStatus, jqXHR) {
+
+				function cargarTabla(data) {
+					let html = "";
+					for (let i = 0; i < data.length; i++) {
+						html +="<table><tbody><tr>";
+			      		html += "<td>"+data[i].modelo+"</td>";
+			      		html += "<td>"+data[i].caracteristicas+"</td>";
+			      		html += "<td>"+data[i].precio+"</td></tr></tbody></table>";
+			      		console.log(data);
+			      		$(".contenedor").html(html);
+					}
+				}
+
+				function obtenerDatos(){
+      				$.ajax({
+        				"url" : "http://localhost/WEB/WebII/TPEWebII/api/celulares",
+        				"method" : "GET",
+        				"dataType" : "JSON",
+        				"success" : cargarTabla,
+        				"error" : function(xmlhr, r, error){
+          				console.log(error);
+        				}
+      				});
+  				}
+
+  				$(".probandorest").on("click",obtenerDatos);
+	    			function subidaConExito(data){
+	      				console.log(data);
+	      				obtenerDatos();
+	    			}
+    			subidaConExito(data);
 			}
 		});
 	});

@@ -3,8 +3,10 @@
   abstract class Api {
 
     protected $model;
+    protected $raw_data;
 
     function __construct(){
+      $this->raw_data = file_get_contents("php://input");
     }
 
     protected function json_response($data, $status) {
