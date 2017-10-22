@@ -7,6 +7,7 @@ define('PARAMS', 1);
   include_once '../model/Model.php';
   include_once 'controller/CelularesApiController.php';
   include_once 'controller/MarcasApiController.php';
+  include_once 'controller/ComentariosApiController.php';
 
   $router = new Router();
   //url, verb, controller, method
@@ -21,6 +22,11 @@ define('PARAMS', 1);
   $router->AddRoute("marcas/:id", "GET", "MarcasApiController", "getMarca");
   $router->AddRoute("marcas/:id", "POST", "MarcasApiController", "createMarca");
   $router->AddRoute("marcas/:id", "DELETE", "MarcasApiController", "deleteMarca");
+
+  $router->AddRoute("comentarios", "GET", "ComentariosApiController", "getComentarios");
+  $router->AddRoute("comentarioscelular/:id", "GET", "ComentariosApiController", "getComentariosCelular");
+  $router->AddRoute("comentariosusuario/:id", "GET", "ComentariosApiController", "getComentariosUsuario");
+  $router->AddRoute("comentario/:id", "GET", "ComentariosApiController", "getComentario");
 
   $route = $_GET['resource'];
   $array = $router->Route($route);
