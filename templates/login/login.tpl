@@ -1,4 +1,4 @@
-<h2 class="titulologin">Ingresar como administrador</h2>
+<h2 class="titulologin">Ingresar</h2>
 <div class="row login">
     <div class="col-xs-12 col-md-4 col-md-offset-4">
         <form action='checkUser' method="POST" class="ingreso form-signin">

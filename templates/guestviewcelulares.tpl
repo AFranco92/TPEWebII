@@ -11,6 +11,7 @@
   <table class="table table-striped">
     <thead>
       <tr>
+        <th>Marca</th>
         <th>Modelo</th>
         <th>Características</th>
         <th>Precio</th>
@@ -20,8 +21,15 @@
       {foreach from=$celulares item=celular}
       <tr>
         {if $celular['stock']}
+        {foreach from=$marcas item=marca}
+        {if $celular['id_marca'] == $marca['id_marca']}
         <td>
-          <strong>{$celular['modelo']}</strong>
+          {$marca['nombre']}
+        </td>
+        {/if}
+        {/foreach}
+        <td>
+          {$celular['modelo']}
         </td>
         <td>
           {$celular['caracteristicas']}
@@ -30,8 +38,15 @@
           {$celular['precio']}<p class="stock">Sin stock</p>
         </td>
         {else}
+        {foreach from=$marcas item=marca}
+        {if $celular['id_marca'] == $marca['id_marca']}
         <td>
-          <strong>{$celular['modelo']}</strong>
+          {$marca['nombre']}
+        </td>
+        {/if}
+        {/foreach}
+        <td>
+          {$celular['modelo']}
         </td>
         <td>
           {$celular['caracteristicas']}

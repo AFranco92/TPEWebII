@@ -7,7 +7,7 @@ th {
 tr {
 	color: #0A9453;
 }
-.boton {
+.boton, .panel-title {
 	font-weight: bold;
 }
 body {

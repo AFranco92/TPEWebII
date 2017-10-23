@@ -5,19 +5,26 @@
   <table class="table table-striped">
     <thead>
       <tr>
+        <th>Marca</th>
         <th>Modelo</th>
         <th>Características</th>
         <th>Precio</th>
-        <th>Marca</th>
-        <th><a class="boton addCelular" href="#">[+]</a></th>
+        <th><a class="boton addCelular" href="#"><button class="btn btn-lg btn-success btn-block" type="submit">Agregar</button></a></th>
       </tr>
     </thead>
     <tbody>
       {foreach from=$celulares item=celular}
       <tr>
         {if $celular['stock']}
+        {foreach from=$marcas item=marca}
+        {if $celular['id_marca'] == $marca['id_marca']}
         <td>
-          <strong>{$celular['modelo']}</strong>
+          {$marca['nombre']}
+        </td>
+        {/if}
+        {/foreach}
+        <td>
+          {$celular['modelo']}
         </td>
         <td>
           {$celular['caracteristicas']}
@@ -26,15 +33,6 @@
           {$celular['precio']}<p class="stock">Sin stock</p>
         </td>
         {else}
-        <td>
-          <strong>{$celular['modelo']}</strong>
-        </td>
-        <td>
-          {$celular['caracteristicas']}
-        </td>
-        <td>
-          {$celular['precio']}
-        </td>
         {foreach from=$marcas item=marca}
         {if $celular['id_marca'] == $marca['id_marca']}
         <td>
@@ -42,12 +40,21 @@
         </td>
         {/if}
         {/foreach}
-        {/if}
         <td>
-          <a class="boton edit" href="setNoStock/{$celular['id_celular']}">[Sin stock]</a>
+          {$celular['modelo']}
         </td>
         <td>
-          <a class="boton delete" href="deleteCelular/{$celular['id_celular']}">[x]</a>
+          {$celular['caracteristicas']}
+        </td>
+        <td>
+          {$celular['precio']}
+        </td>
+        {/if}
+        <td>
+          <a class="boton edit" href="setNoStock/{$celular['id_celular']}"><button class="btn btn-lg btn-warning btn-block" type="submit">Sin stock</button></a>
+        </td>
+        <td>
+          <a class="boton delete" href="deleteCelular/{$celular['id_celular']}"><button class="btn btn-lg btn-danger btn-block" type="submit">X</button></a>
         </td>
       </tr>
     {/foreach}

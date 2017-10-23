@@ -7,7 +7,7 @@
       <tr>
         <th>Nombre</th>
         <th>Descripción</th>
-        <th><a class="boton addMarca" href="#">[+]</a></th>
+        <th><a class="boton addMarca" href="#"><button class="btn btn-lg btn-success btn-block" type="submit">Agregar</button></a></th>
       </tr>
     </thead>
     <tbody>
@@ -20,7 +20,7 @@
           {$marca['descripcion']}
         </td>
         <td>
-          <a class="boton delete" href="deleteMarca/{$marca['id_marca']}">[x]</a>
+          <a class="boton delete" href="deleteMarca/{$marca['id_marca']}"><button class="btn btn-lg btn-danger btn-block" type="submit">X</button></a>
         </td>
       </tr>
     {/foreach}

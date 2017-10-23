@@ -124,12 +124,12 @@ $(document).ready(function() {
 			"url" : "",
 			"method" : "GET",
 			"dataType" : "HTML",
-			"success" : function(data, textStatus, jqXHR) {
+			"success" : function carga(data, textStatus, jqXHR) {
 
 				function cargarTabla(data) {
 					let html = "";
 					for (let i = 0; i < data.length; i++) {
-						html +="<table><tbody><tr>";
+						html +="<table class='table table-striped'><tbody><tr>";
 			      		html += "<td>"+data[i].modelo+"</td>";
 			      		html += "<td>"+data[i].caracteristicas+"</td>";
 			      		html += "<td>"+data[i].precio+"</td></tr></tbody></table>";
@@ -152,7 +152,6 @@ $(document).ready(function() {
 
   				$(".probandorest").on("click",obtenerDatos);
 	    			function subidaConExito(data){
-	      				console.log(data);
 	      				obtenerDatos();
 	    			}
     			subidaConExito(data);
