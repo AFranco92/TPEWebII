@@ -13,7 +13,8 @@
 			$this->smarty->display('templates/web/productos.tpl');
 		}
 
-		function showComentarios() {
+		function showComentarios($celulares) {
+			$this->smarty->assign('celulares', $celulares);
 			$this->smarty->display('templates/web/comentarios.tpl');
 		}
 

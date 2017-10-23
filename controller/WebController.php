@@ -24,7 +24,8 @@
 	  	}
 
 	  	public function comentarios() {
-	  		$this->view->showComentarios();
+	  		$celulares = $this->modelcelulares->getCelulares();
+	  		$this->view->showComentarios($celulares);
 	  	}
 
 	  	public function caracteristicas() {
