@@ -7,13 +7,24 @@ th {
 tr {
 	color: #0A9453;
 }
-.boton, .panel-title {
+.boton, .panel-title, th, tr {
 	font-weight: bold;
 }
 body {
 	background: linear-gradient(to bottom, white, green);
 	background-size: 350%;
 	margin: 1%;
+}
+body::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 100%;
+  background-image: url("../images/fondo.jpg");
+  background-attachment: fixed;
+  background-position: bottom;
+  filter: opacity(25%);
+  z-index: -1;
+  background-repeat: no-repeat;
 }
 .login {
 	margin: 5%;
