@@ -25,7 +25,6 @@
 			        <!-- <li><a href="#" class="cargarproductos">Productos</a></li> -->
 			        <li><a href="#" class="cargarcomentarios">Leé las opiniones de los clientes</a></li>
 			        <li><a href="#" class="cargarcaracteristicas">Características detalladas de los productos</a></li>
-			        <li><a href="#" class="probandorest">Probar rest</a></li>
 			      </ul>
 			      <ul class="nav navbar-nav navbar-right">
 			      	<li><a href="#" class="cargarlogin">Ingresar</a></li>

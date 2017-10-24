@@ -22,6 +22,23 @@ $(document).ready(function() {
 			"dataType" : "HTML",
 			"success" : function(data) {
 				$(".contenedor").html(data);
+				$(function() {
+				    $('#login-form-link').click(function(e) {
+						$("#login-form").delay(100).fadeIn(100);
+				 		$("#register-form").fadeOut(100);
+						$('#register-form-link').removeClass('active');
+						$(this).addClass('active');
+						e.preventDefault();
+					});
+					$('#register-form-link').click(function(e) {
+						$("#register-form").delay(100).fadeIn(100);
+				 		$("#login-form").fadeOut(100);
+						$('#login-form-link').removeClass('active');
+						$(this).addClass('active');
+						e.preventDefault();
+					});
+
+				});
 			}
 		});
 	});
@@ -119,7 +136,7 @@ $(document).ready(function() {
 
 	//Pruebo rest.
 
-	$(".probandorest").on("click", function() {
+	$(".cargarcomentarios").on("click", function() {
 		$.ajax({
 			"url" : "",
 			"method" : "GET",
@@ -129,18 +146,17 @@ $(document).ready(function() {
 				function cargarTabla(data) {
 					let html = "";
 					for (let i = 0; i < data.length; i++) {
-						html +="<table class='table table-striped'><tbody><tr>";
-			      		html += "<td>"+data[i].modelo+"</td>";
-			      		html += "<td>"+data[i].caracteristicas+"</td>";
-			      		html += "<td>"+data[i].precio+"</td></tr></tbody></table>";
+						html +="<div class='panel-heading'><h2 class='panel-title usuario'>"+data[i].usuario+"</h2><h5 class='celular'></h4>";
+			      		html +="</div><div class='panel-body'>";
+			      		html +="<section>"+data[i].textocomentario+"</section></div>";
 			      		console.log(data);
-			      		$(".contenedor").html(html);
+			      		$(".comentariousuario").html(html);
 					}
 				}
 
 				function obtenerDatos(){
       				$.ajax({
-        				"url" : "http://localhost/WEB/WebII/TPEWebII/api/celulares",
+        				"url" : "http://localhost/WEB/WebII/TPEWebII/api/comentarios",
         				"method" : "GET",
         				"dataType" : "JSON",
         				"success" : cargarTabla,
@@ -150,7 +166,7 @@ $(document).ready(function() {
       				});
   				}
 
-  				$(".probandorest").on("click",obtenerDatos);
+  				$(".cargarcomentarios").on("click",obtenerDatos);
 	    			function subidaConExito(data){
 	      				obtenerDatos();
 	    			}

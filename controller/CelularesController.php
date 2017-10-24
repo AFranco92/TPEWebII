@@ -1,6 +1,7 @@
 <?php 
 	include_once 'model/CelularesModel.php';
 	include_once 'view/CelularesView.php';
+	include_once 'model/UsuariosModel.php';
 
 	class CelularesController extends SecuredController {
 
@@ -9,6 +10,7 @@
 			$this->model = new CelularesModel();
 			$this->view = new CelularesView();
 			$this->modelmarca = new MarcasModel();
+			$this->modelusuarios = new UsuariosModel();
 		}
 
 		public function index() {
@@ -20,7 +22,8 @@
 		public function indexabm() {
 			$marcas = $this->modelmarca->getMarcas();
 			$celulares = $this->model->getCelulares();
-			$this->view->showIndex($celulares, $marcas);
+			$usuarios = $this->modelusuarios->getUsuarios();
+			$this->view->showIndex($celulares, $marcas, $usuarios);
 		}
 
 		public function create() {

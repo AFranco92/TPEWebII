@@ -1,12 +1,4 @@
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h2 class="panel-title usuario"></h2>
-    <h5 class="celular"></h4>
-  </div>
-  <div class="panel-body">
-  <section class="comentariousuario">
-  </section>
-  </div>
+<div class="panel panel-default comentariousuario"></div>
 </div>
 <div class="row">
   <div class="opinion col-md-4 col-xs-12">

@@ -2,7 +2,9 @@
 {include file='nav.tpl'}
 <div class="contenedorabm">
 	<div class="jumbotron">
-  		<h1>Ingresaste como administrador</h1>
+		{foreach from=$usuarios item=usuario}
+  		<h1>Bienvenido {$usuario['usuario']}</h1>
+  		{/foreach}
   		<p>Hacé click en los botones del navegador para iniciar la edición del contenido.</p>
 	</div>
 </div>
