@@ -71,6 +71,45 @@ $(document).ready(function() {
 						}
 					});
 				});
+
+				$.ajax({
+					"url" : "",
+					"method" : "GET",
+					"dataType" : "HTML",
+					"success" : function carga(data, textStatus, jqXHR) {
+
+						function cargarTabla(data) {
+							let html = "";
+							for (let i = 0; i < data.length; i++) {
+								html +="<div class='panel-heading'>";
+								html +="<h2 class='panel-title usuario'>";
+								html +=data[i].usuario+"</h2><h4 class='celular'></h4>";
+					      		html +="</div><div class='panel-body'>";
+					      		html +="<section>"+data[i].textocomentario+"</section></div>";
+					      		console.log(data);
+					      		$(".comentariousuario").html(html);
+							}
+						}
+
+						function obtenerDatos(){
+		      				$.ajax({
+		        				"url" : "http://localhost/WEB/WebII/TPEWebII/api/comentarioscelular/"+id_celular,
+		        				"method" : "GET",
+		        				"dataType" : "JSON",
+		        				"success" : cargarTabla,
+		        				"error" : function(xmlhr, r, error){
+		          				console.log(error);
+		        				}
+		      				});
+		  				}
+
+		  				$(".cargarcomentarios").on("click",obtenerDatos);
+			    			function subidaConExito(data){
+			      				obtenerDatos();
+			    			}
+		    			subidaConExito(data);
+					}
+				});
 			}
 		});
 	});
@@ -132,6 +171,28 @@ $(document).ready(function() {
 		});
 	});
 
+	$(".abmUsuarios").on("click", function() {
+		$.ajax({
+			"url" : "usuarios",
+			"method" : "GET",
+			"dataType" : "HTML",
+			"success" : function(data) {
+				$(".contenedorabm").html(data);
+			}
+		});
+	});
+
+	$(".abmComentarios").on("click", function() {
+		$.ajax({
+			"url" : "abmcomentarios",
+			"method" : "GET",
+			"dataType" : "HTML",
+			"success" : function(data) {
+				$(".contenedorabm").html(data);
+			}
+		});
+	});
+
 	//Final código navegación web con partial render.
 
 	//Pruebo rest.
@@ -146,7 +207,9 @@ $(document).ready(function() {
 				function cargarTabla(data) {
 					let html = "";
 					for (let i = 0; i < data.length; i++) {
-						html +="<div class='panel-heading'><h2 class='panel-title usuario'>"+data[i].usuario+"</h2><h5 class='celular'></h4>";
+						html +="<div class='panel-heading'>";
+						html +="<h2 class='panel-title usuario'>";
+						html +=data[i].usuario+"</h2><h4 class='celular'></h4>";
 			      		html +="</div><div class='panel-body'>";
 			      		html +="<section>"+data[i].textocomentario+"</section></div>";
 			      		console.log(data);

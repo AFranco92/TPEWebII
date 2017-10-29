@@ -36,5 +36,4 @@
 			$sentencia->execute([$id_comentario]);
 		}
 	}
-
  ?>

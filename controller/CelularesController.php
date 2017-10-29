@@ -10,7 +10,6 @@
 			$this->model = new CelularesModel();
 			$this->view = new CelularesView();
 			$this->modelmarca = new MarcasModel();
-			$this->modelusuarios = new UsuariosModel();
 		}
 
 		public function index() {
@@ -22,8 +21,7 @@
 		public function indexabm() {
 			$marcas = $this->modelmarca->getMarcas();
 			$celulares = $this->model->getCelulares();
-			$usuarios = $this->modelusuarios->getUsuarios();
-			$this->view->showIndex($celulares, $marcas, $usuarios);
+			$this->view->showIndex($celulares, $marcas);
 		}
 
 		public function create() {

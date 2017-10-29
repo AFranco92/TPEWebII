@@ -1,7 +1,8 @@
 <?php 
 	class WebView extends View {
 
-		function showIndex() {
+		function showIndex($usuarios) {
+			$this->smarty->assign('usuarios', $usuarios);
 			$this->smarty->display('templates/web/index.tpl');
 		}
 
@@ -18,9 +19,10 @@
 			$this->smarty->display('templates/web/comentarios.tpl');
 		}
 
-		function showCaracteristicas($celulares, $marcas) {
+		function showCaracteristicas($celulares, $marcas, $comentarios) {
 			$this->smarty->assign('celulares', $celulares);
 			$this->smarty->assign('marcas', $marcas);
+			$this->smarty->assign('comentarios', $comentarios);
 			$this->smarty->display('templates/web/caracteristicas.tpl');
 		}
 

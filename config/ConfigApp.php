@@ -22,7 +22,12 @@
             'setNoStock' => 'CelularesController#noStock',
             'login' => 'LoginController#index',
             'checkUser' => 'LoginController#verify',
-            'logout' => 'LoginController#destroy'
+            'logout' => 'LoginController#destroy',
+            'register' => 'UsuariosController#store',
+            'usuarios' => 'UsuariosController#index',
+            'deleteUsuario' => 'UsuariosController#destroy',
+            'setAdmin' => 'UsuariosController#setAdmin',
+            'abmcomentarios' => 'ComentariosController#index'
     	];
 	}
 ?>

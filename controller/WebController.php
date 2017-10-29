@@ -2,6 +2,8 @@
 	include_once 'view/WebView.php';
 	include_once 'model/CelularesModel.php';
 	include_once 'model/MarcasModel.php';
+	include_once 'model/UsuariosModel.php';
+	include_once 'model/ComentariosModel.php';
 
 	class WebController extends Controller {
 
@@ -9,10 +11,13 @@
 	    	$this->view = new WebView();
 	    	$this->modelcelulares = new CelularesModel();
 	    	$this->modelmarcas = new MarcasModel();
+	    	$this->modelusuarios = new UsuariosModel();
+	    	$this->modelcomentarios = new ComentariosModel();
 	  	}
 
 	  	public function index() {
-	  		$this->view->showIndex();
+	  		$usuarios = $this->modelusuarios->getUsuarios();
+	  		$this->view->showIndex($usuarios);
 	  	}
 
 	  	public function home() {
@@ -31,7 +36,8 @@
 	  	public function caracteristicas() {
 	  		$celulares = $this->modelcelulares->getCelulares();
 			$marcas = $this->modelmarcas->getMarcas();
-	  		$this->view->showCaracteristicas($celulares, $marcas);
+			$comentarios = $this->modelcomentarios->getComentarios();
+	  		$this->view->showCaracteristicas($celulares, $marcas, $comentarios);
 	  	}
 
 	  	public function contacto() {

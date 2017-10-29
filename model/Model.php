@@ -1,32 +1,32 @@
 <?php 
 
-  class Model {
+    class Model {
 
-    protected $db;
+        protected $db;
 
-    function __construct() {
+        function __construct() {
 
-      try {
-        $this->db = new PDO('mysql:host=localhost;'.'dbname=db_celulares;charset=utf8', 'root', '');
-      }
-      catch (PDOException $e) {
-        buildDDBBfromFile('db_celulares', 'database/db_celulares.sql');
-      } 
+            try {
+                $this->db = new PDO('mysql:host=localhost;'.'dbname=db_celulares;charset=utf8', 'root', '');
+            }
+            catch (PDOException $e) {
+                buildDDBBfromFile('db_celulares', 'database/db_celulares.sql');
+            } 
+        }
     }
-  }
 
-  function buildDDBBfromFile($dbname, $dbfile) {
+    function buildDDBBfromFile($dbname, $dbfile) {
 
-   	try {
-     	$connection = new PDO('mysql:host=localhost', 'root', '');
-     	$connection->exec('CREATE DATABASE IF NOT EXISTS '.$dbname);
-     	$connection->exec('USE '. $dbname);
-     	$queries = loadSQLSchema($dbfile);
-     	$connection->exec($queries);
+   	    try {
+         	$connection = new PDO('mysql:host=localhost', 'root', '');
+         	$connection->exec('CREATE DATABASE IF NOT EXISTS '.$dbname);
+         	$connection->exec('USE '. $dbname);
+         	$queries = loadSQLSchema($dbfile);
+         	$connection->exec($queries);
 		} 
 		catch (PDOException $e) {
      		echo $e;
-   	}
+   	    }
  	}
 
   function loadSQLSchema($dbfile) {

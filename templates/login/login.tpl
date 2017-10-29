@@ -1,18 +1,3 @@
-<!-- <div class="row login">
-    <div class="col-xs-12 col-md-4 col-md-offset-4">
-        <form action='checkUser' method="POST" class="ingreso form-signin">
-            <label for="inputText" class="sr-only">Usuario</label>
-            <input type="text" name="usuario" id="inputText" class="form-control" placeholder="Usuario" required autofocus>
-            <label for="inputPassword" class="sr-only">Contraseña</label>
-            <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Contraseña"     required>
-            {if !empty($error) }
-            <div class="alert alert-danger" role="alert">{$error}</div>
-            {/if}
-            <a class="registrarse" href="">Registrarse</a>
-            <button class="btn btn-lg btn-success btn-block" type="submit">Ingresar</button>
-        </form>
-    </div>
-</div> -->
 <div class="container">
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
@@ -64,7 +49,7 @@
                                 </form>
                                 <form id="register-form" action="register" method="POST" role="form" style="display: none;">
                                     <div class="form-group">
-                                        <input type="text" name="usuariotoregistrar" id="username" tabindex="1" class="form-control" placeholder="Usuario" value="">
+                                        <input type="text" name="usertoregister" id="username" tabindex="1" class="form-control" placeholder="Usuario" value="">
                                     </div>
                                     <div class="form-group">
                                         <input type="email" name="emailtoregister" id="email" tabindex="1" class="form-control" placeholder="Email" value="">
@@ -73,7 +58,7 @@
                                         <input type="password" name="passwordtoregister" id="password" tabindex="2" class="form-control" placeholder="Contraseña">
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirmar contraseña">
+                                        <input type="password" name="confirmpassword" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirmar contraseña">
                                     </div>
                                     <div class="form-group">
                                         <div class="row">

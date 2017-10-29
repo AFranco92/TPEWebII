@@ -8,10 +8,9 @@
 			$this->smarty->display('templates/celulares.tpl');
 		}
 
-		function showIndex($celulares, $marcas, $usuarios) {
+		function showIndex($celulares, $marcas) {
 			$this->smarty->assign('celulares', $celulares);
 			$this->smarty->assign('marcas', $marcas);
-			$this->smarty->assign('usuarios', $usuarios);
 			$this->smarty->display('templates/indexabm.tpl');
 		}
 
