@@ -26,9 +26,9 @@ define('PARAMS', 1);
   $router->AddRoute("comentarios", "GET", "ComentariosApiController", "getComentarios");
   $router->AddRoute("comentarioscelular/:id", "GET", "ComentariosApiController", "getComentariosCelular");
   $router->AddRoute("comentariosusuario/:id", "GET", "ComentariosApiController", "getComentariosUsuario");
-  $router->AddRoute("comentario/:id", "GET", "ComentariosApiController", "getComentario");
-  $router->AddRoute("comentario/:id", "POST", "ComentariosApiController", "createComentario");
-  $router->AddRoute("comentario/:id", "DELETE", "ComentariosApiController", "deleteComentario");
+  $router->AddRoute("comentarios/:id", "GET", "ComentariosApiController", "getComentario");
+  $router->AddRoute("comentarios", "POST", "ComentariosApiController", "createComentario");
+  $router->AddRoute("comentarios/:id", "DELETE", "ComentariosApiController", "deleteComentario");
 
   $route = $_GET['resource'];
   $array = $router->Route($route);

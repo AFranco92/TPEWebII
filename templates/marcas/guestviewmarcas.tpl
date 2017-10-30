@@ -20,7 +20,7 @@
   </tbody>
 </table>
 <h2>Comentar</h2>
-<form action="comentar" method="POST">
+<form class="comentar">
     <select name="comentar" class="form-control comment">
         <option value="" selected disabled hidden>Elegir</option>
         {foreach from=$celulares item=celular}

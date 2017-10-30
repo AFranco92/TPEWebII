@@ -27,7 +27,8 @@
             'usuarios' => 'UsuariosController#index',
             'deleteUsuario' => 'UsuariosController#destroy',
             'setAdmin' => 'UsuariosController#setAdmin',
-            'abmcomentarios' => 'ComentariosController#index'
+            'abmcomentarios' => 'ComentariosController#index',
+            'deleteComentario' => 'ComentariosController#destroy'
     	];
 	}
 ?>

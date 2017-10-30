@@ -93,7 +93,7 @@ $(document).ready(function() {
 
 				// 		function obtenerDatos(){
 		  //     				$.ajax({
-		  //       				"url" : "http://localhost/WEB/WebII/TPEWebII/api/comentarioscelular/"+id_celular,
+		  //       				"url" : "http://localhost/WEB/WebII/TPEWebII/api/comentarios",
 		  //       				"method" : "GET",
 		  //       				"dataType" : "JSON",
 		  //       				"success" : cargarTabla,
@@ -192,49 +192,5 @@ $(document).ready(function() {
 			}
 		});
 	});
-
 	//Final código navegación web con partial render.
-
-	//Pruebo rest.
-
-	$(".cargarcomentarios").on("click", function() {
-		$.ajax({
-			"url" : "",
-			"method" : "GET",
-			"dataType" : "HTML",
-			"success" : function carga(data, textStatus, jqXHR) {
-
-				function cargarTabla(data) {
-					let html = "";
-					for (let i = 0; i < data.length; i++) {
-						html +="<div class='panel-heading'>";
-						html +="<h2 class='panel-title usuario'>";
-						html +=data[i].usuario+"</h2><h4 class='celular'></h4>";
-			      		html +="</div><div class='panel-body'>";
-			      		html +="<section>"+data[i].textocomentario+"</section></div>";
-			      		console.log(data);
-			      		$(".comentariousuario").html(html);
-					}
-				}
-
-				function obtenerDatos(){
-      				$.ajax({
-        				"url" : "http://localhost/WEB/WebII/TPEWebII/api/comentarios",
-        				"method" : "GET",
-        				"dataType" : "JSON",
-        				"success" : cargarTabla,
-        				"error" : function(xmlhr, r, error){
-          				console.log(error);
-        				}
-      				});
-  				}
-
-  				$(".cargarcomentarios").on("click",obtenerDatos);
-	    			function subidaConExito(data){
-	      				obtenerDatos();
-	    			}
-    			subidaConExito(data);
-			}
-		});
-	});
 });

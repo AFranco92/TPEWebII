@@ -20,7 +20,7 @@
     </thead>
     <tbody>
         {foreach from=$celulares item=celular}
-            <tr>
+            <tr class="comentariousuario">
                 {if $celular['sinstock']}
                     {foreach from=$marcas item=marca}
                         {if $celular['id_marca'] == $marca['id_marca']}
@@ -38,14 +38,6 @@
                 <td>
                     ${$celular['precio']}<p class="stock">Sin stock</p>
                 </td>
-                {foreach from=$comentarios item=comentario}
-                    {if $celular['id_celular'] == $comentario['id_celular']}
-                        <td>
-                            <div class="panel panel-default comentariousuario">
-                            </div>
-                        </td>
-                    {/if}
-                {/foreach}
                 {else}
                     {foreach from=$marcas item=marca}
                         {if $celular['id_marca'] == $marca['id_marca']}
@@ -63,14 +55,6 @@
                 <td>
                     ${$celular['precio']}
                 </td>
-                {foreach from=$comentarios item=comentario}
-                    {if $celular['id_celular'] == $comentario['id_celular']}
-                        <td>
-                            <div class="panel panel-default comentariousuario">
-                            </div>
-                        </td>
-                    {/if}
-                {/foreach}
                 {/if}
             </tr>
         {/foreach}

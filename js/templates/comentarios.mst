@@ -1,0 +1,10 @@
+{{#arreglo}}
+<div id="comentario{{id_celular}}" class="panel-heading">
+<h2 class='panel-title usuario'>
+    {{usuario}}
+</h2><h4 class='celular'></h4>
+</div><div class='panel-body'>
+<section>
+    {{textocomentario}}
+</section></div>
+{{/arreglo}}
