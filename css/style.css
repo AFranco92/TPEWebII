@@ -11,7 +11,7 @@ tr {
 	font-weight: bold;
 }
 body {
-	background: linear-gradient(to bottom, white, green);
+	background: linear-gradient(to bottom, white, black);
 	background-size: 350%;
 	margin: 1%;
 }
@@ -28,9 +28,6 @@ body::before {
 }
 .login {
 	margin: 5%;
-}
-.titulologin {
-	color: grey;
 }
 input, button, textarea, select {
 	margin: 2%;
@@ -49,11 +46,6 @@ img {
 }
 span {
 	font-size: 200%;
-}
-
-footer {
-	background-color: #222345;
-	height: 120%;
 }
 .copyright, .telefono {
 	color: white;
@@ -83,7 +75,6 @@ footer {
 	margin-top: 5%;
 }
 .table-responsive {
-	margin-left: 2%;
 	margin-right: 2%;
 }
 .jumbotron {
@@ -114,9 +105,9 @@ a:link {
 	margin-left: 35%;
 }
 .navbar-nav > li > a, .navbar-brand {
-    padding-top:33px !important; 
+    padding-top:42px !important; 
     padding-bottom:0 !important;
-    height: 85px;
+    height: 105px;
 }
 .navbar {
 	min-height:60px !important;
@@ -137,10 +128,11 @@ a:link {
 	margin-left: 10%;
 }
 .stock {
+	font-size: 125%;
 	font-weight: bold;
 	color: red;
 }
-.filter, .dofilter {
+.filter, .dofilter, .comment {
 	margin: 3%;
 	width: 25%;
 }
@@ -239,4 +231,8 @@ a:link {
 	color: #fff;
 	background-color: #1CA347;
 	border-color: #1CA347;
+}
+footer {
+	background-color: #222345;
+	height: 120%;
 }

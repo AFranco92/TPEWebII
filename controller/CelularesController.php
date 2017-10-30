@@ -40,14 +40,14 @@
 			$modelo = $_POST['modelo'];
 			$caracteristicas = $_POST['caracteristicas'];
 			$precio = $_POST['precio'];
-			$stock = isset($_POST['stock']) ? $_POST['stock'] : 0;
+			$sinstock = isset($_POST['sinstock']) ? $_POST['sinstock'] : 0;
 			$id_marca = $_POST['id_marca'];
 			if (isset($_POST['modelo'], $_POST['caracteristicas'], $_POST['precio'], $_POST['id_marca'])) {
-				$this->model->setCelular($modelo, $caracteristicas, $precio, $stock, $id_marca);
+				$this->model->setCelular($modelo, $caracteristicas, $precio, $sinstock, $id_marca);
 				header('Location: '.ABM);
 			}
 			else {
-			$this->view->showErrorCreate("Hay campos vacíos o hubo un error", $marcas, $modelo, $caracteristicas, $precio, $stock, $id_marca);
+			$this->view->showErrorCreate("Hay campos vacíos o hubo un error", $marcas, $modelo, $caracteristicas, $precio, $sinstock, $id_marca);
 			}
 		}
 

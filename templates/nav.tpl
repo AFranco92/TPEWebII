@@ -11,11 +11,10 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <p></p>
         <li><a class="abmCelulares" href="#">ABM Celulares</a></li>
         <li><a class="abmMarcas" href="#">ABM Marcas</a></li>
-        <li><a class="abmUsuarios" href="#">ABM Usuarios</a></li>
-        <li><a class="abmComentarios" href="#">ABM Comentarios</a></li>
+        <li><a class="abmUsuarios" href="#">BM Usuarios</a></li>
+        <li><a class="abmComentarios" href="#">B Comentarios</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a class="logout" href="logout">Salir</a></li>

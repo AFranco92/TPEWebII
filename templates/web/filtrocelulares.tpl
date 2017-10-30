@@ -58,7 +58,7 @@
                 {foreach from=$celulares item=celular}
                 <tr>
                   {if $celular['id_marca'] == $id_marca}
-                  {if $celular['stock']}
+                  {if $celular['sinstock']}
                   <td>
                     <strong>{$celular['modelo']}</strong>
                   </td>

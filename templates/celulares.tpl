@@ -15,7 +15,7 @@
     <tbody>
       {foreach from=$celulares item=celular}
       <tr>
-        {if $celular['stock']}
+        {if $celular['sinstock']}
         {foreach from=$marcas item=marca}
         {if $celular['id_marca'] == $marca['id_marca']}
         <td>
@@ -30,7 +30,7 @@
           {$celular['caracteristicas']}
         </td>
         <td>
-          {$celular['precio']}<p class="stock">Sin stock</p>
+          ${$celular['precio']}<p class="stock">Sin stock</p>
         </td>
         {else}
         {foreach from=$marcas item=marca}
@@ -47,7 +47,7 @@
           {$celular['caracteristicas']}
         </td>
         <td>
-          {$celular['precio']}
+          ${$celular['precio']}
         </td>
         {/if}
         <td>

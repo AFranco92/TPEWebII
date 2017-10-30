@@ -13,9 +13,15 @@
 					<td>
 						{$usuario['usuario']}
 					</td>
+					{if {$usuario['administrador']}}
 					<td>
-						{$usuario['administrador']}
+						Sí
 					</td>
+					{else}
+					<td>
+						No
+					</td>
+					{/if}
 					<td>
 						<a class="boton edit" href="setAdmin/{$usuario['id_usuario']}"><button class="btn btn-md btn-warning btn-block" type="submit">Nombrar administrador</button></a>
 					</td>
