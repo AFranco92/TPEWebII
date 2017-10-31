@@ -132,7 +132,7 @@ a:link {
 	font-weight: bold;
 	color: red;
 }
-.filter, .dofilter, .comment {
+.filter, .dofilter, .comment, .puntaje {
 	margin: 3%;
 	width: 25%;
 }
@@ -235,4 +235,12 @@ a:link {
 footer {
 	background-color: #222345;
 	height: 120%;
+}
+.userdiv {
+	color: white;
+	font-weight: bold;
+}
+.user {
+	color: orange;
+	font-size: 125%;
 }

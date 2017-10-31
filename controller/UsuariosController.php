@@ -1,13 +1,15 @@
 <?php 
 	include_once 'model/UsuariosModel.php';
+	include_once 'controller/LoginController.php';
 	include_once 'view/UsuariosView.php';
 
 	class UsuariosController extends Controller
 	{
 		function __construct()
 		{
-			$this->model = new UsuariosModel;
-			$this->view = new UsuariosView;
+			$this->model = new UsuariosModel();
+			$this->view = new UsuariosView();
+			$this->controllerlogin = new LoginController();
 		}
 
 		public function index()
@@ -28,7 +30,6 @@
 				{
 					$password = password_hash($password, PASSWORD_DEFAULT);
 					$this->model->setUsuario($usuario, $mail, $password);
-					
 					header('Location: '.HOME);
 				}
 				else
@@ -47,6 +48,12 @@
     		$id_usuario = $params[0];
     		$this->model->setAdmin($id_usuario);
     		header('Location: '.ABM);
+  		}
+
+  		public function setOnline($params) 
+		{
+    		$id_usuario = $params[0];
+    		$this->model->setOnline($id_usuario);
   		}
 
 		public function destroy($params)

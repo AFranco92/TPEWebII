@@ -11,6 +11,11 @@
 		<header>
 			<nav class="navbar navbar-inverse">
 			  <div class="container-fluid">
+			  	{foreach from=$usuarios item=usuario}
+			  	{if $usuario['online']}
+			  		<div class="userdiv">Bienvenido <span class="user">{$usuario['usuario']} </span><a href="#">| Salir |</a></div>
+			  	{/if}
+			  	{/foreach}
 			    <div class="navbar-header">
 			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
 			        <span class="sr-only">Toggle navigation</span>

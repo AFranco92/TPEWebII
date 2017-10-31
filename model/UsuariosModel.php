@@ -36,6 +36,12 @@
 			$sentencia = $this->db->prepare('UPDATE Usuario SET administrador = 1 WHERE id_usuario = ?');
     		$sentencia->execute([$id_usuario]);
 		}
+
+		function setOnline($id_usuario)
+		{
+			$sentencia = $this->db->prepare('UPDATE Usuario SET online = 1 WHERE id_usuario = ?');
+			$sentencia->execute([$id_usuario]);
+		}
 	}
 
  ?>

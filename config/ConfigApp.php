@@ -27,6 +27,7 @@
             'usuarios' => 'UsuariosController#index',
             'deleteUsuario' => 'UsuariosController#destroy',
             'setAdmin' => 'UsuariosController#setAdmin',
+            'setOnline' => 'UsuariosController#setOnline',
             'abmcomentarios' => 'ComentariosController#index',
             'deleteComentario' => 'ComentariosController#destroy'
     	];
