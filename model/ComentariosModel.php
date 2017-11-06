@@ -26,9 +26,9 @@
 			return $sentencia->fetch(PDO::FETCH_ASSOC);
 		}
 
-		function setComentario($id_usuario, $id_celular, $textocomentario) {
-			$sentencia = $this->db->prepare('INSERT INTO Comentario(id_usuario, id_celular, textocomentario) VALUES(?,?,?)');
-			$sentencia->execute([$id_usuario, $id_celular, $comentario]);
+		function setComentario($id_usuario, $usuario, $id_celular, $textocomentario) {
+			$sentencia = $this->db->prepare('INSERT INTO Comentario(id_usuario, usuario, id_celular, textocomentario) VALUES(?,?,?,?)');
+			$sentencia->execute([$id_usuario, $usuario, $id_celular, $textocomentario]);
 		}
 
 		function deleteComentario($id_comentario) {

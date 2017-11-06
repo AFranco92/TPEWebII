@@ -20,6 +20,11 @@
   </tbody>
 </table>
 <h2>Comentar</h2>
+{foreach from=$usuarios item=usuario}
+{if $usuario['administrador'] == 1}
+  <p>Comentando como: <span class="writer">{$usuario['usuario']}</span></p>
+{/if}
+{/foreach}
 <form class="comentar">
     <select name="celularacomentar" class="form-control comment">
         <option value="" selected disabled hidden>Celular</option>

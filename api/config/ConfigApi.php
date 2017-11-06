@@ -8,7 +8,8 @@
 	      'celulares#POST' => 'CelularesApiController#createCelular',
 	      'celulares#PUT' => 'CelularesApiController#editCelular',
 	      'celulares#DELETE' => 'CelularesApiController#deleteCelular',
-	      'marcas#GET' => 'MarcasApiController#getMarcas'
+	      'marcas#GET' => 'MarcasApiController#getMarcas',
+	      'comentarios#POST' => 'ComentariosApiController#createComentario'
 	    ];
 	}
 ?>

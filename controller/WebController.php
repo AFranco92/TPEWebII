@@ -36,8 +36,9 @@
 	  	public function caracteristicas() {
 	  		$celulares = $this->modelcelulares->getCelulares();
 			$marcas = $this->modelmarcas->getMarcas();
+			$usuarios = $this->modelusuarios->getUsuarios();
 			$comentarios = $this->modelcomentarios->getComentarios();
-	  		$this->view->showCaracteristicas($celulares, $marcas, $comentarios);
+	  		$this->view->showCaracteristicas($celulares, $marcas, $usuarios, $comentarios);
 	  	}
 
 	  	public function contacto() {

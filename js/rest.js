@@ -58,13 +58,13 @@ $(document).ready(function(){
             	});
 
             	function cargarTabla(comentario) {
-            		let element = "<td>";
+            		let element = "<td><div class='panel panel-default'>";
             		element +='<div id="comentario'+comentario['id_celular']+'" class="panel-heading">';
             		element +="<h2 class='panel-title usuario'>";
             		element +=comentario.usuario+"</h2>";
-                element +="</div><div class='panel-body'>";
-                element +="<section>"+comentario.textocomentario+"</section></div></td>";
-                return element;
+                    element +="</div><div class='panel-body'>";
+                    element +="<section>"+comentario.textocomentario+"</section></div></div></td>";
+                    return element;
             	}
 
             	function cargarComentarios() {

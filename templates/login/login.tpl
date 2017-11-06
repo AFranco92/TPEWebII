@@ -23,10 +23,6 @@
                                     <div class="form-group">
                                         <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Contraseña">
                                     </div>
-                                    <div class="form-group text-center">
-                                        <input type="checkbox" tabindex="3" class="" name="remember" id="remember">
-                                        <label for="remember"> Recordarme</label>
-                                    </div>
                                     <div class="form-group">
                                         <div class="row">
                                             <div class="col-sm-6 col-sm-offset-3">
@@ -37,15 +33,6 @@
                                     {if !empty($error) }
                                         <div class="alert alert-danger" role="alert">{$error}</div>
                                     {/if}
-                                    <div class="form-group">
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <div class="text-center">
-                                                    <a href="#" tabindex="5" class="forgot-password">¿Olvidó su contraseña?</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </form>
                                 <form id="register-form" action="register" method="POST" role="form" style="display: none;">
                                     <div class="form-group">

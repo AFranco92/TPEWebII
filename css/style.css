@@ -240,7 +240,12 @@ footer {
 	color: white;
 	font-weight: bold;
 }
-.user {
-	color: orange;
+.user, .writer {
+	color: #FF7400;
 	font-size: 125%;
+	font-weight: bold;
+}
+.panel {
+	border-color: black;
+	color: black;
 }

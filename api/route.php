@@ -5,23 +5,10 @@ define('PARAMS', 1);
 
   include_once 'config/Router.php';
   include_once '../model/Model.php';
-  include_once 'controller/CelularesApiController.php';
-  include_once 'controller/MarcasApiController.php';
   include_once 'controller/ComentariosApiController.php';
 
   $router = new Router();
   //url, verb, controller, method
-  $router->AddRoute("celulares", "GET", "CelularesApiController", "getCelulares");
-  $router->AddRoute("celulares/:id", "GET", "CelularesApiController", "getCelular");
-  $router->AddRoute("celulares/:id/caracteristicas", "GET", "CelularesApiController", "getCaracteristicas");
-  $router->AddRoute("celulares/:id", "PUT", "CelularesApiController", "editCelular");
-  $router->AddRoute("celulares/:id", "POST", "CelularesApiController", "createCelular");
-  $router->AddRoute("celulares/:id", "DELETE", "CelularesApiController", "deleteCelular");
-
-  $router->AddRoute("marcas", "GET", "MarcasApiController", "getMarcas");
-  $router->AddRoute("marcas/:id", "GET", "MarcasApiController", "getMarca");
-  $router->AddRoute("marcas/:id", "POST", "MarcasApiController", "createMarca");
-  $router->AddRoute("marcas/:id", "DELETE", "MarcasApiController", "deleteMarca");
 
   $router->AddRoute("comentarios", "GET", "ComentariosApiController", "getComentarios");
   $router->AddRoute("comentarioscelular/:id", "GET", "ComentariosApiController", "getComentariosCelular");

@@ -19,9 +19,10 @@
 			$this->smarty->display('templates/web/comentarios.tpl');
 		}
 
-		function showCaracteristicas($celulares, $marcas, $comentarios) {
+		function showCaracteristicas($celulares, $marcas, $usuarios, $comentarios) {
 			$this->smarty->assign('celulares', $celulares);
 			$this->smarty->assign('marcas', $marcas);
+			$this->smarty->assign('usuarios', $usuarios);
 			$this->smarty->assign('comentarios', $comentarios);
 			$this->smarty->display('templates/web/caracteristicas.tpl');
 		}
