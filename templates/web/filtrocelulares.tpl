@@ -54,7 +54,7 @@
               </thead>
               <tbody>
                 {foreach from=$celulares item=celular}
-                <tr>
+                <tr class="comentariousuario">
                   {if $celular['id_marca'] == $id_marca}
                   {if $celular['sinstock']}
                   <td>

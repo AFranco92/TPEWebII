@@ -21,7 +21,7 @@
 </table>
 <h2>Comentar</h2>
 {foreach from=$usuarios item=usuario}
-{if $usuario['administrador'] == 1}
+{if $usuario['online'] == 1}
   <p>Comentando como: <span class="writer">{$usuario['usuario']}</span></p>
 {/if}
 {/foreach}

@@ -4,12 +4,10 @@
 	    public static $RESOURCE = 'resource';
 	    public static $PARAMS = 'params';
 	    public static $RESOURCES = [
-	      'celulares#GET' => 'CelularesApiController#getCelulares',
-	      'celulares#POST' => 'CelularesApiController#createCelular',
-	      'celulares#PUT' => 'CelularesApiController#editCelular',
-	      'celulares#DELETE' => 'CelularesApiController#deleteCelular',
-	      'marcas#GET' => 'MarcasApiController#getMarcas',
-	      'comentarios#POST' => 'ComentariosApiController#createComentario'
+	   		'comentarios#GET' => 'ComentariosApiController#getComentarios',
+	    	'comentarios#POST' => 'ComentariosApiController#createComentario',
+	    	'comentarios#PUT' => 'ComentariosApiController#editComentario',
+	    	'comentarios#DELETE' => 'ComentariosApiController#deleteComentario'
 	    ];
 	}
 ?>

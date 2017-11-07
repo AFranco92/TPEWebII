@@ -18,6 +18,11 @@
         {if $celular['sinstock']}
         {foreach from=$marcas item=marca}
         {if $celular['id_marca'] == $marca['id_marca']}
+        {foreach from=$celular['imagenes'] item=imagen}
+        <td>  
+          <img src="{$imagen['ruta']}" alt="Imagen del celular {$celular['modelo']}">
+        </td>
+        {/foreach}
         <td>
           {$marca['nombre']}
         </td>
@@ -50,6 +55,12 @@
           ${$celular['precio']}
         </td>
         {/if}
+        <td>
+            <form action="postImageCelular" method="POST">
+                <input type="file" id="imagenes" name="imagenes[]" multiple>
+                <input type="submit" name="">
+            </form>
+        </td>
         <td>
           <a class="boton edit" href="setNoStock/{$celular['id_celular']}"><button class="btn btn-lg btn-warning btn-block" type="submit">Sin stock</button></a>
         </td>

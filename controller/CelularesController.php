@@ -35,19 +35,26 @@
     		header('Location: '.ABM);
   		}
 
+  		public function postImageCelular($params) {
+  			$id_celular = $params[0];
+  			$this->model->setImageCelular($id_celular);
+  			header('Location: '.ABM);
+  		}
+
 		public function store() {
+			$imagesTempRoute = $_FILES['imagenes']['tmp_name'];
 			$marcas = $this->modelmarca->getMarcas();
 			$modelo = $_POST['modelo'];
 			$caracteristicas = $_POST['caracteristicas'];
 			$precio = $_POST['precio'];
 			$sinstock = isset($_POST['sinstock']) ? $_POST['sinstock'] : 0;
 			$id_marca = $_POST['id_marca'];
-			if (isset($_POST['modelo'], $_POST['caracteristicas'], $_POST['precio'], $_POST['id_marca'])) {
-				$this->model->setCelular($modelo, $caracteristicas, $precio, $sinstock, $id_marca);
+			if (isset($_POST['modelo'], $_POST['caracteristicas'], $_POST['precio'], $_POST['id_marca'], $_FILES['imagenes']['tmp_name'])) {
+				$this->model->setCelular($modelo, $caracteristicas, $precio, $sinstock, $id_marca, $imagesTempRoute);
 				header('Location: '.ABM);
 			}
 			else {
-			$this->view->showErrorCreate("Hay campos vacíos o hubo un error", $marcas, $modelo, $caracteristicas, $precio, $sinstock, $id_marca);
+			$this->view->showErrorCreate("Hay campos vacíos o hubo un error", $marcas, $modelo, $caracteristicas, $precio, $sinstock, $id_marca, $imagesTempRoute);
 			}
 		}
 

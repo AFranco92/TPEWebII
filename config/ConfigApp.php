@@ -17,6 +17,7 @@
             'deleteMarca' => 'MarcasController#destroy',
       	    'addCelular' => 'CelularesController#create',
       	    'setCelular' => 'CelularesController#store',
+            'postImageCelular' => 'CelularesController#postImageCelular',
       	    'deleteCelular' => 'CelularesController#destroy',
             'setNoStock' => 'CelularesController#noStock',
             'login' => 'LoginController#index',

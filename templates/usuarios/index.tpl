@@ -9,7 +9,6 @@
 			</thead>
 			<tbody>
 				{foreach from=$usuarios item=usuario}
-				<a href="setOnline/{$usuario['id_usuario']}">online</a>
 				<tr>
 					<td>
 						{$usuario['usuario']}

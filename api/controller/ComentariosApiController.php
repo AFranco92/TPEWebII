@@ -40,11 +40,11 @@
 
         public function createComentario() {
     	    $body = json_decode($this->raw_data);
-    	    $id_usuario = $body->id_usuario;
+    	    $fk_id_usuario = $body->fk_id_usuario;
             $usuario = $body->usuario;
-    	    $id_celular = $body->id_celular;
+    	    $fk_id_celular = $body->fk_id_celular;
     	    $textocomentario = $body->textocomentario;
-    	    $comentario = $this->model->setComentario($id_usuario, $usuario, $id_celular, $textocomentario);
+    	    $comentario = $this->model->setComentario($fk_id_usuario, $usuario, $fk_id_celular, $textocomentario);
     	    return $this->json_response($comentario, 200);
         }
 
