@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-    $(".cargarcaracteristicas").on("click", function() {
+    $(".cargarcaracteristicas, .dofilter").on("click", function() {
         $.ajax({
             "url" : "caracteristicas",
             "method" : "GET",
@@ -31,7 +31,7 @@ $(document).ready(function(){
             		$.ajax({
             			"method": "POST",
             			"data": comentario,
-            			"url": "api/comentarios",
+            			"url": "api/comentarios/",
             		})
             		.done(function(comentario) {
             			console.log(comentario);
@@ -51,7 +51,7 @@ $(document).ready(function(){
             	    return indexed_array;
             	}
 
-            	$('.comentar').submit(function(event){
+            	$(".comentar").submit(function(event){
             		event.preventDefault();
             		formData = JSON.stringify(getFormData($(this)));
             		guardarComentario(formData);

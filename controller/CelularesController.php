@@ -49,7 +49,7 @@
 			$precio = $_POST['precio'];
 			$sinstock = isset($_POST['sinstock']) ? $_POST['sinstock'] : 0;
 			$id_marca = $_POST['id_marca'];
-			if (isset($_POST['modelo'], $_POST['caracteristicas'], $_POST['precio'], $_POST['id_marca'], $_FILES['imagenes']['tmp_name'])) {
+			if (isset($_POST['modelo'], $_POST['caracteristicas'], $_POST['precio'], $_POST['id_marca'])) {
 				$this->model->setCelular($modelo, $caracteristicas, $precio, $sinstock, $id_marca, $imagesTempRoute);
 				header('Location: '.ABM);
 			}
