@@ -30,6 +30,7 @@
 				{
 					$password = password_hash($password, PASSWORD_DEFAULT);
 					$this->model->setUsuario($usuario, $mail, $password);
+					session_start();
 					header('Location: '.HOME);
 				}
 				else
@@ -61,6 +62,8 @@
 			$id_usuario = $params[0];
 			$this->model->deleteUsuario($id_usuario);
 			header('Location: '.ABM);
+			session_start();
+			session_destroy();
 		}
 	}
  ?>

@@ -1,9 +1,8 @@
 {{#arreglo}}
 <div class='panel panel-default'>
-	<div id="comentario{{id_celular}}" class="panel-heading">
-		<h2 class='panel-title usuario'>
-    	{{usuario}}
-		</h2><h4 class='celular'></h4>
+	<div id="comentario{{fk_id_celular}}" class="panel-heading">
+		<h2 class='panel-title usuario'>{{fk_usuario}}</h2>
+		<h4 class='celular'></h4>
 	</div>
 	<div class='panel-body'>
 		<section>

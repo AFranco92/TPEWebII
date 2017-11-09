@@ -11,7 +11,7 @@
 				{foreach from=$comentarios item=comentario}
 				<tr>
 					<td>
-						{$comentario['usuario']}
+						{$comentario['fk_usuario']}
 					</td>
 					<td>
 						{$comentario['textocomentario']}

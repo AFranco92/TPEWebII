@@ -8,5 +8,4 @@
 			$this->smarty->display('templates/comentarios/index.tpl');
 		}
 	}
-
  ?>

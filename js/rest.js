@@ -23,7 +23,7 @@ $(document).ready(function(){
                   		crearComentario(comentarios);
                 	})
                 	.fail(function() {
-                    	$('#comentariousuario').append('<td>No se pudieron cargar los comentarios</td>');
+                    	$('.comentariousuario').append('<td>No se pudieron cargar los comentarios</td>');
                 	});
               	}
 
@@ -31,7 +31,7 @@ $(document).ready(function(){
             		$.ajax({
             			"method": "POST",
             			"data": comentario,
-            			"url": "api/comentarios/",
+            			"url": "api/comentarios",
             		})
             		.done(function(comentario) {
             			console.log(comentario);
@@ -61,7 +61,7 @@ $(document).ready(function(){
             		let element = "<td><div class='panel panel-default'>";
             		element +='<div id="comentario'+comentario['id_celular']+'" class="panel-heading">';
             		element +="<h2 class='panel-title usuario'>";
-            		element +=comentario.usuario+"</h2>";
+            		element +=comentario.fk_usuario+"</h2>";
                     element +="</div><div class='panel-body'>";
                     element +="<section>"+comentario.textocomentario+"</section></div></div></td>";
                     return element;

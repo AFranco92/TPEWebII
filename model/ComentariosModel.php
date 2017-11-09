@@ -8,15 +8,15 @@
 			return $sentencia->fetchAll(PDO::FETCH_ASSOC);
 		}
 
-		function getComentariosCelular($id_celular) {
-			$sentencia = $this->db->prepare('SELECT * FROM Comentario WHERE id_celular = ?');
-			$sentencia->execute([$id_celular]);
+		function getComentariosCelular($fk_id_celular) {
+			$sentencia = $this->db->prepare('SELECT * FROM Comentario WHERE fk_id_celular = ?');
+			$sentencia->execute([$fk_id_celular]);
 			return $sentencia->fetchAll(PDO::FETCH_ASSOC);
 		}
 
-		function getComentariosUsuario($id_usuario) {
-			$sentencia = $this->db->prepare('SELECT * FROM Comentario WHERE id_usuario = ?');
-			$sentencia->execute([$id_usuario]);
+		function getComentariosUsuario($fk_id_usuario) {
+			$sentencia = $this->db->prepare('SELECT * FROM Comentario WHERE fk_id_usuario = ?');
+			$sentencia->execute([$fk_id_usuario]);
 			return $sentencia->fetchAll(PDO::FETCH_ASSOC);
 		}
 
@@ -26,9 +26,9 @@
 			return $sentencia->fetch(PDO::FETCH_ASSOC);
 		}
 
-		function setComentario($id_usuario, $usuario, $id_celular, $textocomentario) {
-			$sentencia = $this->db->prepare('INSERT INTO Comentario(fk_id_usuario, usuario, fk_id_celular, textocomentario) VALUES(?,?,?,?)');
-			$sentencia->execute([$fk_id_usuario, $usuario, $fk_id_celular, $textocomentario]);
+		function setComentario($fk_id_usuario, $fk_usuario, $fk_id_celular, $textocomentario) {
+			$sentencia = $this->db->prepare('INSERT INTO Comentario(fk_id_usuario, fk_usuario, fk_id_celular, textocomentario) VALUES(?,?,?,?)');
+			$sentencia->execute([$fk_id_usuario, $fk_usuario, $fk_id_celular, $textocomentario]);
 		}
 
 		function deleteComentario($id_comentario) {

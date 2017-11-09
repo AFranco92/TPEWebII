@@ -16,14 +16,14 @@
         }
 
         public function getComentariosCelular($url_params = []) {
-    	    $id_celular = $url_params[":id"];
-    	    $comentarioscelular = $this->model->getComentariosCelular($id_celular);
+    	    $fk_id_celular = $url_params[":id"];
+    	    $comentarioscelular = $this->model->getComentariosCelular($fk_id_celular);
     	    return $this->json_response($comentarioscelular, 200);
         }
 
         public function getComentariosUsuario($url_params = []) {
-    	    $id_usuario = $url_params[":id"];
-    	    $comentariosusuario = $this->model->getComentariosUsuario($id_usuario);
+    	    $fk_id_usuario = $url_params[":id"];
+    	    $comentariosusuario = $this->model->getComentariosUsuario($fk_id_usuario);
     	    return $this->json_response($comentariosusuario, 200);
         }
 
@@ -41,10 +41,10 @@
         public function createComentario() {
     	    $body = json_decode($this->raw_data);
     	    $fk_id_usuario = $body->fk_id_usuario;
-            $usuario = $body->usuario;
+            $fk_usuario = $body->fk_usuario;
     	    $fk_id_celular = $body->fk_id_celular;
     	    $textocomentario = $body->textocomentario;
-    	    $comentario = $this->model->setComentario($fk_id_usuario, $usuario, $fk_id_celular, $textocomentario);
+    	    $comentario = $this->model->setComentario($fk_id_usuario, $fk_usuario, $fk_id_celular, $textocomentario);
     	    return $this->json_response($comentario, 200);
         }
 

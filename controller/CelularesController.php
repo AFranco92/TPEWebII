@@ -11,7 +11,7 @@
 			$this->view = new CelularesView();
 			$this->modelmarca = new MarcasModel();
 		}
-
+	
 		public function index() {
 			$celulares = $this->model->getCelulares();
 			$marcas = $this->modelmarca->getMarcas();
