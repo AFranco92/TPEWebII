@@ -35,12 +35,6 @@
     		header('Location: '.ABM);
   		}
 
-  		public function postImageCelular($params) {
-  			$id_celular = $params[0];
-  			$this->model->setImageCelular($id_celular);
-  			header('Location: '.ABM);
-  		}
-
 		public function store() {
 			$imagesTempRoute = $_FILES['imagenes']['tmp_name'];
 			$marcas = $this->modelmarca->getMarcas();
@@ -55,6 +49,21 @@
 			}
 			else {
 			$this->view->showErrorCreate("Hay campos vacíos o hubo un error", $marcas, $modelo, $caracteristicas, $precio, $sinstock, $id_marca, $imagesTempRoute);
+			}
+		}
+
+		public function storeImagenes($params)
+		{
+			$id_celular = $params[0];
+			$imagesTempRoute = $_FILES['imagenes']['tmp_name'];
+			if(!empty($imagesTempRoute) && !empty($id_celular))
+			{
+				$this->model->setImagenes($imagesTempRoute, $id_celular);
+				header('Location: '.ABM);
+			}
+			else
+			{
+				echo "No se seleccionó ninguna imagen";
 			}
 		}
 

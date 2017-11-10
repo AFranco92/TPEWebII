@@ -1,6 +1,6 @@
 <?php 
 	include_once 'model/UsuariosModel.php';
-	include_once 'controller/LoginController.php';
+	include_once 'model/LoginModel.php';
 	include_once 'view/UsuariosView.php';
 
 	class UsuariosController extends Controller
@@ -9,7 +9,7 @@
 		{
 			$this->model = new UsuariosModel();
 			$this->view = new UsuariosView();
-			$this->controllerlogin = new LoginController();
+			$this->modellogin = new LoginModel();
 		}
 
 		public function index()
@@ -30,7 +30,15 @@
 				{
 					$password = password_hash($password, PASSWORD_DEFAULT);
 					$this->model->setUsuario($usuario, $mail, $password);
-					session_start();
+
+					if(!empty($usuario) && !empty($password)){
+	        			$user = $this->modellogin->getUser($usuario);
+	        			if((!empty($user)) && password_verify($password, $user[0]['password'])) {
+	            			session_start();
+	            			$_SESSION['USER'] = $usuario;
+	            			$_SESSION['LAST_ACTIVITY'] = time();
+	        			}
+	     			}
 					header('Location: '.HOME);
 				}
 				else

@@ -17,7 +17,6 @@
             'deleteMarca' => 'MarcasController#destroy',
       	    'addCelular' => 'CelularesController#create',
       	    'setCelular' => 'CelularesController#store',
-            'postImageCelular' => 'CelularesController#postImageCelular',
       	    'deleteCelular' => 'CelularesController#destroy',
             'setNoStock' => 'CelularesController#noStock',
             'login' => 'LoginController#index',
@@ -30,7 +29,9 @@
             'setAdmin' => 'UsuariosController#setAdmin',
             'setOnline' => 'UsuariosController#setOnline',
             'abmcomentarios' => 'ComentariosController#index',
-            'deleteComentario' => 'ComentariosController#destroy'
+            'deleteComentario' => 'ComentariosController#destroy',
+            'postImageCelular' => 'CelularesController#storeImagenes',
+            'deleteImagen' => 'ImagenesController#destroy'
     	];
 	}
 ?>

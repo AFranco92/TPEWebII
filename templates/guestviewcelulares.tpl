@@ -21,6 +21,13 @@
     <tbody>
         {foreach from=$celulares item=celular}
             <tr class="comentariousuario">
+            {foreach from=$celular['imagenes'] item=imagen}
+                <td>
+                    <figure>
+                        <img class="fotocelular" src="{$imagen['ruta']}" alt="Imagen del celular {$celular['modelo']}">
+                    </figure>
+                </td>
+            {/foreach}
                 {if $celular['sinstock']}
                     {foreach from=$marcas item=marca}
                         {if $celular['id_marca'] == $marca['id_marca']}

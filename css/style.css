@@ -40,10 +40,6 @@ input, button, textarea, select {
 	border-color: black;
 	border-width: 20%;
 }
-img {
-	max-width: 120%;
-	padding-right: 20%;
-}
 span {
 	font-size: 200%;
 }
@@ -248,4 +244,7 @@ footer {
 .panel {
 	border-color: black;
 	color: black;
+}
+.fotocelular {
+	max-width: 300%;
 }

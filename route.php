@@ -13,7 +13,8 @@
   include_once 'controller/WebController.php';
   include_once 'controller/UsuariosController.php';
   include_once 'controller/ComentariosController.php';  
-  
+  include_once 'controller/ImagenesController.php';  
+
   function parseURL($url){
     $urlExploded = explode('/', $url);
     $arrayReturn[ConfigApp::$ACTION] = $urlExploded[ACTION];
