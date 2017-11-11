@@ -11,16 +11,16 @@ $(document).ready(function(){
 
             	$.ajax({url: 'js/templates/comentarios.mst'}).done(template => templateComentario = template);
 
-            	function crearComentario(comentarios){
-                	let rendered = Mustache.render(templateComentario ,{arreglo:comentarios});
+            	function crearComentario(comentario){
+                	let rendered = Mustache.render(templateComentario, {arreglo:comentario});
                 	$('.comentariousuario').append(rendered);
               	}
 
               	function cargarComentarios(){
                 	$.ajax("api/comentarios")
-                	.done(function(comentarios) {
+                	.done(function(comentario) {
                   		$('td').remove();
-                  		crearComentario(comentarios);
+                  		crearComentario(comentario);
                 	})
                 	.fail(function() {
                     	$('.comentariousuario').append('<td>No se pudieron cargar los comentarios</td>');
@@ -59,7 +59,7 @@ $(document).ready(function(){
 
             	function cargarTabla(comentario) {
             		let element = "<td><div class='panel panel-default'>";
-            		element +='<div id="comentario'+comentario['id_celular']+'" class="panel-heading">';
+            		element +='<div id="comentario'+comentario['fk_id_celular']+'" class="panel-heading">';
             		element +="<h2 class='panel-title usuario'>";
             		element +=comentario.fk_usuario+"</h2>";
                     element +="</div><div class='panel-body'>";
@@ -82,4 +82,4 @@ $(document).ready(function(){
             }
         });    
     });
-})    
+});    

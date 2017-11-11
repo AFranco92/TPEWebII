@@ -38,7 +38,7 @@
     	    }
         }
 
-        public function createComentario() {
+        public function createComentario($url_params = []) {
     	    $body = json_decode($this->raw_data);
     	    $fk_id_usuario = $body->fk_id_usuario;
             $fk_usuario = $body->fk_usuario;
