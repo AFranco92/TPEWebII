@@ -7,9 +7,12 @@ $(document).ready(function(){
             "dataType" : "HTML",
             "success" : function(data) {
 
+                let repetidor;
                 let templateComentario;
 
-            	$.ajax({url: 'js/templates/comentarios.mst'}).done(template => templateComentario = template);
+            	$.ajax({url: 'js/templates/comentario.mst'}).done(template => templateComentario = template);
+
+                clearInterval(repetidor);
 
             	function crearComentario(comentario){
                 	let rendered = Mustache.render(templateComentario, {arreglo:comentario});
@@ -19,7 +22,7 @@ $(document).ready(function(){
               	function cargarComentarios(){
                 	$.ajax("api/comentarios")
                 	.done(function(comentario) {
-                  		$('td').remove();
+                  		$("td").remove();
                   		crearComentario(comentario);
                 	})
                 	.fail(function() {
@@ -35,7 +38,7 @@ $(document).ready(function(){
             		})
             		.done(function(comentario) {
             			console.log(comentario);
-            			crearComentario([comentario]);
+            			crearComentario(comentario);
             		})
             		.fail(function() {
             			alert("Error al guardar comentario");
@@ -66,7 +69,7 @@ $(document).ready(function(){
                     element +="<section>"+comentario.textocomentario+"</section></div></div></td>";
                     return element;
             	}
-
+                
             	function cargarComentarios() {
               		$.ajax("api/comentarios")
                   	.done(function(comentarios) {
@@ -78,8 +81,68 @@ $(document).ready(function(){
                   		$('.comentariousuario').append('<td>Imposible cargar los comentarios</td>');
               		});
             	}
-            	cargarComentarios();
+                cargarComentarios();
+                //repetidor = setInterval(cargarComentarios, 2000);	
             }
-        });    
-    });
-});    
+        }); 
+    });   
+});
+
+// $(document).ready(function(){
+        
+//     $(".cargarcaracteristicas, .dofilter").on("click", function() {
+//         $.ajax({
+//             "url" : "caracteristicas",
+//             "method" : "GET",
+//             "dataType" : "HTML",
+//             "success" : function() {
+
+//                 let templateComentario;
+
+//                 $.ajax({url : 'js/templates/comentario.mst'}).done(template => templateComentario = template);
+
+//                 function createComentario() {
+//                     let comentario = {
+//                         "fk_id_celular" : $('.fk_id_celular').val(),
+//                         "fk_id_usuario" : $('.fk_id_usuario').val(),
+//                         "fk_usuario" : $('.fk_usuario').val(),
+//                         "textocomentario": $('.textocomentario').val()
+//                     }
+
+//                     $.ajax({
+//                         "method" : "POST",
+//                         "url" : "api/comentarios",
+//                         "data" : JSON.stringify(comentario)
+//                     })
+//                     .done(function(data) {
+//                         let rendered = Mustache.render(templateComentario, data);
+//                         $('.comentariousuario').append(rendered);
+//                     })
+//                     .fail(function(data) {
+//                         console.log(data);
+//                         alert('Imposible crear el comentario');
+//                     });
+//                 }
+
+//                 $('.comment').click(function(event){
+//                     event.preventDefault();
+//                     createComentario();
+//                 });
+
+//                 function loadComentarios() {
+//                     $.ajax("api/comentarios")
+//                     .done(function(comentarios) {
+//                         let rendered = Mustache.render(templateComentario, comentarios);
+//                         $('.comentariousuario').append(rendered);
+//                         alert(rendered);
+//                     })
+//                     .fail(function() {
+//                         $('.comentariousuario').append('<td>No se pudieron cargar los comentarios</td>');
+//                     });
+//                 }
+
+//                 loadComentarios();
+//             }
+//         });
+//     });
+// });        

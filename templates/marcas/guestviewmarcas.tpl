@@ -26,13 +26,13 @@
 {/if}
 {/foreach}
 <form class="comentar">
-    <select name="fk_id_celular" class="form-control comment">
+    <select name="fk_id_celular" class="form-control comment fk_id_celular">
         <option value="" selected disabled hidden>Celular</option>
         {foreach from=$celulares item=celular}
         <option value="{$celular['id_celular']}">{$celular['modelo']}</option>
         {/foreach}
-    <input class="form-control" type="text" name="fk_id_usuario" placeholder="Id usuario">
-    <input class="form-control" type="text" name="fk_usuario" placeholder="Usuario">
-    <textarea class="form-control comentario" cols="10" rows="5" name="textocomentario"></textarea>
+    <input class="form-control fk_id_usuario" type="text" name="fk_id_usuario" placeholder="Id usuario">
+    <input class="form-control fk_usuario" type="text" name="fk_usuario" placeholder="Usuario">
+    <textarea class="form-control textocomentario" cols="10" rows="5" name="textocomentario"></textarea>
     <button class="btn btn-lg btn-primary btn-block comment" type="submit">Comentar</button>
 </form>
