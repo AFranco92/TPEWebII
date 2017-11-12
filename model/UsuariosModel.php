@@ -39,7 +39,13 @@
 
 		function setOnline($id_usuario)
 		{
-			$sentencia = $this->db->prepare('UPDATE Usuario SET online = 1 WHERE id_usuario = ?');
+			$sentencia = $this->db->prepare('UPDATE Usuario SET online = 1 WHERE id_usuario = ? AND online = 0');
+			$sentencia->execute([$id_usuario]);
+		}
+
+		function setOffline($id_usuario)
+		{
+			$sentencia = $this->db->prepare('UPDATE Usuario SET online = 0 WHERE id_usuario = ? AND online = 1');
 			$sentencia->execute([$id_usuario]);
 		}
 	}

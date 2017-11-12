@@ -30,16 +30,8 @@
 				{
 					$password = password_hash($password, PASSWORD_DEFAULT);
 					$this->model->setUsuario($usuario, $mail, $password);
-
-					if(!empty($usuario) && !empty($password)){
-	        			$user = $this->modellogin->getUser($usuario);
-	        			if((!empty($user)) && password_verify($password, $user[0]['password'])) {
-	            			session_start();
-	            			$_SESSION['USER'] = $usuario;
-	            			$_SESSION['LAST_ACTIVITY'] = time();
-	        			}
-	     			}
 					header('Location: '.HOME);
+					session_start();
 				}
 				else
 				{
@@ -63,6 +55,14 @@
 		{
     		$id_usuario = $params[0];
     		$this->model->setOnline($id_usuario);
+    		header('Location: '.HOME);
+  		}
+
+  		public function setOffline($params) 
+		{
+    		$id_usuario = $params[0];
+    		$this->model->setOffline($id_usuario);
+    		header('Location: '.HOME);
   		}
 
 		public function destroy($params)

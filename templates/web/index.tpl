@@ -13,7 +13,7 @@
 			  <div class="container-fluid">
 			  	{foreach from=$usuarios item=usuario}
 			  	{if $usuario['online']}
-			  		<div class="userdiv">Bienvenido <span class="user">{$usuario['usuario']} </span><a href="#">| Salir |</a></div>
+			  		<div class="userdiv">Bienvenido <span class="user">{$usuario['usuario']} </span><a class="salir" href="setOffline/{$usuario['id_usuario']}">| Salir |</a></div>
 			  	{/if}
 			  	{/foreach}
 			    <div class="navbar-header">
@@ -58,6 +58,13 @@
 					<a class="linkfooter" href="">Privacidad</a>
 					<a class="linkfooter" href="">Legales</a>
 					<p class="telefono">Tel.: 0249154000000</p>
+					{foreach from=$usuarios item=usuario}
+					{if $usuario['online'] == 1}
+						{if $usuario['administrador'] == 1}
+							<p><a href="indexabm">Panel administrador</a></p>
+						{/if}
+					{/if}
+					{/foreach}
 				</div>			
 			</div>
 		</footer>

@@ -24,10 +24,9 @@
 	        	$user = $this->model->getUser($userName);
 	        	if((!empty($user)) && password_verify($password, $user[0]['password'])) {
 	            	session_start();
-	            	$this->modelusuarios->setOnline($id_usuario);
 	            	$_SESSION['USER'] = $userName;
 	            	$_SESSION['LAST_ACTIVITY'] = time();
-	            	header('Location: '.ABM);
+	            	header('Location: '.HOME);
 	        	}
 	        	else {
 	            	$this->view->showLogin('Usuario o password incorrectos');

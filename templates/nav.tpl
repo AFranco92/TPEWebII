@@ -11,6 +11,7 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
+        <li><a href="sitio">Ir a sitio web</a></li>
         <li><a class="abmCelulares" href="#">ABM Celulares</a></li>
         <li><a class="abmMarcas" href="#">ABM Marcas</a></li>
         <li><a class="abmUsuarios" href="#">BM Usuarios</a></li>

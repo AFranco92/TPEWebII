@@ -7,12 +7,9 @@ $(document).ready(function(){
             "dataType" : "HTML",
             "success" : function(data) {
 
-                let repetidor;
                 let templateComentario;
 
             	$.ajax({url: 'js/templates/comentario.mst'}).done(template => templateComentario = template);
-
-                clearInterval(repetidor);
 
             	function crearComentario(comentario){
                 	let rendered = Mustache.render(templateComentario, {arreglo:comentario});
@@ -82,7 +79,6 @@ $(document).ready(function(){
               		});
             	}
                 cargarComentarios();
-                //repetidor = setInterval(cargarComentarios, 2000);	
             }
         }); 
     });   

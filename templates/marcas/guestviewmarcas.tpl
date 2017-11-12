@@ -31,8 +31,10 @@
         {foreach from=$celulares item=celular}
         <option value="{$celular['id_celular']}">{$celular['modelo']}</option>
         {/foreach}
-    <input class="form-control fk_id_usuario" type="text" name="fk_id_usuario" placeholder="Id usuario">
-    <input class="form-control fk_usuario" type="text" name="fk_usuario" placeholder="Usuario">
+    {if $usuario['online'] == 1}
+    <input class="form-control fk_id_usuario" type="text" name="fk_id_usuario" placeholder="Id usuario" value="{$usuario['id_usuario']}">
+    <input class="form-control fk_usuario" type="text" name="fk_usuario" placeholder="Usuario" value="{$usuario['usuario']}">
+    {/if}
     <textarea class="form-control textocomentario" cols="10" rows="5" name="textocomentario"></textarea>
     <button class="btn btn-lg btn-primary btn-block comment" type="submit">Comentar</button>
 </form>

@@ -4,6 +4,7 @@
     	public static $PARAMS = 'params';
     	public static $ACTIONS = [ 
             '' => 'WebController#index',
+            'sitio' => 'WebController#index',
             'home' => 'WebController#home',
             'productos' => 'WebController#productos',
             'caracteristicas' => 'WebController#caracteristicas',
@@ -28,6 +29,7 @@
             'deleteUsuario' => 'UsuariosController#destroy',
             'setAdmin' => 'UsuariosController#setAdmin',
             'setOnline' => 'UsuariosController#setOnline',
+            'setOffline' => 'UsuariosController#setOffline',
             'abmcomentarios' => 'ComentariosController#index',
             'deleteComentario' => 'ComentariosController#destroy',
             'postImageCelular' => 'CelularesController#storeImagenes',

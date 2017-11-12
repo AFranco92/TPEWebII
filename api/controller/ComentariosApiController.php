@@ -39,13 +39,21 @@
         }
 
         public function createComentario($url_params = []) {
-    	    $body = json_decode($this->raw_data);
-    	    $fk_id_usuario = $body->fk_id_usuario;
-            $fk_usuario = $body->fk_usuario;
-    	    $fk_id_celular = $body->fk_id_celular;
-    	    $textocomentario = $body->textocomentario;
-    	    $comentario = $this->model->setComentario($fk_id_usuario, $fk_usuario, $fk_id_celular, $textocomentario);
-    	    return $this->json_response($comentario, 200);
+            session_start();
+            if(isset($_SESSION['USER'])){
+                $body = json_decode($this->raw_data);
+                $fk_id_usuario = $body->fk_id_usuario;
+                $fk_usuario = $body->fk_usuario;
+                $fk_id_celular = $body->fk_id_celular;
+                $textocomentario = $body->textocomentario;
+                $comentario = $this->model->setComentario($fk_id_usuario, $fk_usuario, $fk_id_celular, $textocomentario);
+                return $this->json_response($comentario, 200);
+                if (time() - $_SESSION['LAST_ACTIVITY'] > 400) {
+                    header('Location: '.LOGOUT);
+                    die();
+                }
+                $_SESSION['LAST_ACTIVITY'] = time();
+            }
         }
 
         public function deleteComentario($url_params = []) {
