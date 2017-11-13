@@ -5,7 +5,7 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <th></th>
+        <th>Fotos</th>
         <th>Marca</th>
         <th>Modelo</th>
         <th>Características</th>
@@ -16,14 +16,14 @@
     <tbody>
       {foreach from=$celulares item=celular}
       <tr>
-        {foreach from=$celular['imagenes'] item=imagen}
         <td>
+          {foreach from=$celular['imagenes'] item=imagen}
           <figure>
             <img class="fotocelular" src="{$imagen['ruta']}" alt="Imagen del celular {$celular['modelo']}">
           </figure> 
           <a class="boton delete" href="deleteImagen/{$imagen['id_imagen']}"><button class="btn btn-md btn-danger btn-block" type="submit">x</button></a>
+          {/foreach}
         </td>
-        {/foreach}
         {if $celular['sinstock']}
         {foreach from=$marcas item=marca}
         {if $celular['id_marca'] == $marca['id_marca']}

@@ -56,16 +56,6 @@ $(document).ready(function(){
             		formData = JSON.stringify(getFormData($(this)));
             		guardarComentario(formData);
             	});
-
-            	function cargarTabla(comentario) {
-            		let element = "<td><div class='panel panel-default'>";
-            		element +='<div id="comentario'+comentario['fk_id_celular']+'" class="panel-heading">';
-            		element +="<h2 class='panel-title usuario'>";
-            		element +=comentario.fk_usuario+"</h2>";
-                    element +="</div><div class='panel-body'>";
-                    element +="<section>"+comentario.textocomentario+"</section></div></div></td>";
-                    return element;
-            	}
                 
             	function cargarComentarios() {
               		$.ajax("api/comentarios")

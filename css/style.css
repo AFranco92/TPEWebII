@@ -251,3 +251,10 @@ footer {
 .salir:link {
 	color: lightblue;
 }
+.cargarhome {
+	font-size: 400%;
+}
+.fk_puntaje {
+	color: #FFAA00;
+	font-weight: bold;	
+}
