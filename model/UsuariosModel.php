@@ -37,6 +37,12 @@
     		$sentencia->execute([$id_usuario]);
 		}
 
+		function setNoAdmin($id_usuario)
+		{
+			$sentencia = $this->db->prepare('UPDATE Usuario SET administrador = 0 WHERE id_usuario = ?');
+    		$sentencia->execute([$id_usuario]);
+		}
+
 		function setOnline($id_usuario)
 		{
 			$sentencia = $this->db->prepare('UPDATE Usuario SET online = 1 WHERE id_usuario = ? AND online = 0');

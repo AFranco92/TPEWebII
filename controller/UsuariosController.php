@@ -51,6 +51,13 @@
     		header('Location: '.ABM);
   		}
 
+  		public function setNoAdmin($params) 
+		{
+    		$id_usuario = $params[0];
+    		$this->model->setNoAdmin($id_usuario);
+    		header('Location: '.ABM);
+  		}
+
   		public function setOnline($params) 
 		{
     		$id_usuario = $params[0];
