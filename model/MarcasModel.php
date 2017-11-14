@@ -4,7 +4,7 @@
 
 		function getMarcas()
 		{
-			$sentencia = $this->db->prepare('SELECT * FROM Marca');
+			$sentencia = $this->db->prepare('SELECT * FROM Marca ORDER BY nombre');
 			$sentencia->execute();
 			return $sentencia->fetchAll(PDO::FETCH_ASSOC);
 		}

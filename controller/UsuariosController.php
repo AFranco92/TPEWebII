@@ -18,6 +18,29 @@
 			$this->view->showUsuarios($usuarios);
 		}
 
+	  	public function verify()
+	  	{
+	  		$usuario = $this->model->getUsuario($id_usuario);
+	      	$userName = $_POST['usuario'];
+	      	$password = $_POST['password'];
+
+	      	if(!empty($userName) && !empty($password))
+	      	{
+	        	$user = $this->model->getUser($userName);
+	        	if((!empty($user)) && password_verify($password, $user[0]['password']))
+	        	{
+	            	session_start();
+	            	$_SESSION['USER'] = $userName;
+	            	$_SESSION['LAST_ACTIVITY'] = time();
+	            	header('Location: '.HOME);
+	        	}
+	        	else
+	        	{
+	            	$this->view->showLogin('Usuario o password incorrectos');
+	        	}
+	     	}
+	  	}
+
 		public function store()
 		{
 			if (!empty($_POST['usertoregister']) && !empty($_POST['emailtoregister']) && !empty($_POST['passwordtoregister']) && !empty($_POST['confirmpassword']))
@@ -30,8 +53,8 @@
 				{
 					$password = password_hash($password, PASSWORD_DEFAULT);
 					$this->model->setUsuario($usuario, $mail, $password);
+					$this->verify();
 					header('Location: '.HOME);
-					session_start();
 				}
 				else
 				{

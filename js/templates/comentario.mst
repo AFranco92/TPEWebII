@@ -1,13 +1,15 @@
 {{#arreglo}}
-	<div class='panel panel-default'>
-		<div class="panel-heading" id="{{fk_id_celular}}">
-			<h2 class='panel-title usuario'>{{fk_usuario}}</h2>
-			<h4 class="fk_puntaje">+ {{fk_puntaje}}</h4>
+	<td>
+		<div class='panel panel-default'>
+			<div class="panel-heading" id="{{fk_id_celular}}">
+				<h2 class='panel-title usuario'>{{fk_usuario}}</h2>
+				<h4 class="fk_puntaje">+ {{fk_puntaje}}</h4>
+			</div>
+			<div class='panel-body'>
+				<section>
+	    			{{textocomentario}}
+		 		</section>
+	 		</div>
 		</div>
-		<div class='panel-body'>
-			<section>
-	    		{{textocomentario}}
-		 	</section>
-	 	</div>
-	</div>
+	</td>
 {{/arreglo}}

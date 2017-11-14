@@ -52,6 +52,7 @@
 					<a class="linkfooter" href="">Privacidad</a>
 					<a class="linkfooter" href="">Legales</a>
 					<p class="telefono">Tel.: 0249154000000</p>
+					<p><a href="indexabm">Panel administrador</a></p>
 				</div>			
 			</div>
 		</footer>

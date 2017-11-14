@@ -27,7 +27,7 @@ $(document).ready(function(){
                                 $.ajax({
                                     "method": "POST",
                                     "data": comentario,
-                                    "url": "api/comentarios",
+                                    "url": "api/comentarios"
                                 })
                                 .done(function(comentario) {
                                     console.log(comentario);

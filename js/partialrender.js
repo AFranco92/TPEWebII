@@ -151,5 +151,15 @@ $(document).ready(function() {
 			}
 		});
 	});
+
 	//Fin código navegación web con partial render.
+	
+	$('img#captcha-refresh').click(function() {
+		change_captcha();
+ 	});
+ 
+	function change_captcha()
+	{
+		document.getElementById('captcha').src="get_captcha.php?rnd=" + Math.random();
+	}
 });
