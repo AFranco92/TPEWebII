@@ -33,9 +33,10 @@
 	  		$id_celular = $params[0];
 		  	$celular = $this->modelcelulares->getCelular($id_celular);
 		  	$celulares = $this->modelcelulares->getCelulares();
+		  	$usuarios = $this->modelusuarios->getUsuarios();
 		  	$marcas = $this->modelmarcas->getMarcas();
 		  	$comentarios = $this->modelcomentarios->getComentarios();
-		  	$this->view->showCaracteristicasCelular($id_celular, $celular, $celulares, $marcas, $comentarios);
+		  	$this->view->showCaracteristicasCelular($id_celular, $celular, $celulares, $usuarios, $marcas, $comentarios);
 	  	}
 
 	  	public function comentarios()

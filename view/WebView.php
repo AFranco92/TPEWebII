@@ -33,11 +33,12 @@
 			$this->smarty->display('templates/web/caracteristicas.tpl');
 		}
 
-		function showCaracteristicasCelular($id_celular, $celular, $celulares, $marcas, $comentarios)
+		function showCaracteristicasCelular($id_celular, $celular, $celulares, $usuarios, $marcas, $comentarios)
 		{
 			$this->smarty->assign('id_celular', $id_celular);
 			$this->smarty->assign('celular', $celular);
 			$this->smarty->assign('celulares', $celulares);
+			$this->smarty->assign('usuarios', $usuarios);
 			$this->smarty->assign('marcas', $marcas);
 			$this->smarty->assign('comentarios', $comentarios);
 			$this->smarty->display('templates/web/caracteristicascelular.tpl');

@@ -9,7 +9,7 @@
           <th>Comentarios</th>
       </tr>
   </thead>
-  <tbody>
+  <tbody> 
       <tr class="comentariousuario" id="{$celular['id_celular']}">
           <td>
               <figure>
@@ -54,3 +54,28 @@
       </tr>
   </tbody>
 </table>
+<div class="row">
+  <div class="col-md-5">
+    {foreach from=$usuarios item=usuario}
+    {if $usuario['online'] == 1}
+    <h2>Comentar</h2>
+      <p>Comentando como: <span class="writer">{$usuario['usuario']}</span></p>
+      <form class="comentar">
+        <select name="fk_puntaje" class="form-control puntaje">
+          <option value="" selected disabled hidden>Puntaje</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>    
+        <input class="form-control fk_id_celular" type="text" name="fk_id_celular" placeholder="Id celular" value="{$celular['id_celular']}">
+        <input class="form-control fk_id_usuario" type="text" name="fk_id_usuario" placeholder="Id usuario" value="{$usuario['id_usuario']}">
+        <input class="form-control fk_usuario" type="text" name="fk_usuario" placeholder="Usuario" value="{$usuario['usuario']}">
+        <textarea class="form-control textocomentario" cols="10" rows="5" name="textocomentario"></textarea>
+        <button class="btn btn-lg btn-primary btn-block comment" type="submit">Comentar</button>
+      </form>
+    {/if}
+    {/foreach}
+  </div>  
+</div>    
