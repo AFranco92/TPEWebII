@@ -7,6 +7,7 @@ $(document).ready(function(){
             "dataType" : "HTML",
             "success" : function(data) {
                 $(".vercaracteristicascelular").on("click", function(){
+                    let fk_id_celular = this.id;
                     $.ajax({
                         "url" : "caracteristicascelular",
                         "method" : "GET",
@@ -51,9 +52,9 @@ $(document).ready(function(){
                                 formData = JSON.stringify(getFormData($(this)));
                                 guardarComentario(formData);
                             });
-                      
-                            function cargarComentarios() {
-                                $.ajax("api/comentarios")
+
+                            function cargarComentarios(){
+                                $.ajax("api/comentarioscelular/"+fk_id_celular)
                                 .done(function(comentarios) {
                                     for (var key in comentarios) {
                                         $('.comentariousuario').append(crearComentario(comentarios[key]));
