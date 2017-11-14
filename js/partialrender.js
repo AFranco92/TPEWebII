@@ -37,7 +37,6 @@ $(document).ready(function() {
 						$(this).addClass('active');
 						e.preventDefault();
 					});
-
 				});
 			}
 		});
@@ -53,6 +52,16 @@ $(document).ready(function() {
 				$(".dofilter").on("click", function() {
 					$.ajax({
 						"url" : "filter",
+						"method" : "GET",
+						"dataType" : "HTML",
+						"success" : function(data) {
+							$(".contenedor").html(data);
+						}
+					});
+				});
+				$(".vercaracteristicascelular").on("click", function() {
+					$.ajax({
+						"url" : "caracteristicascelular/"+this.id,
 						"method" : "GET",
 						"dataType" : "HTML",
 						"success" : function(data) {

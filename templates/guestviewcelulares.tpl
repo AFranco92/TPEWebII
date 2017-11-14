@@ -22,7 +22,7 @@
                 <td>
                     {foreach from=$celular['imagenes'] item=imagen}
                     <figure>
-                        <a class="vercaracteristicascelular" href="caracteristicascelular/{$celular['id_celular']}"><img class="fotocelular" src="{$imagen['ruta']}" alt="Imagen del celular {$celular['modelo']}"></a>
+                        <a class="vercaracteristicascelular" href="#" id="{$celular['id_celular']}"><img class="fotocelular" src="{$imagen['ruta']}" alt="Imagen del celular {$celular['modelo']}"></a>
                     </figure>
                     {/foreach}
                 </td>

@@ -248,6 +248,9 @@ footer {
 .fotocelular {
 	max-width: 15%;
 }
+.fotocelularabm {
+	max-width: 200%;
+}
 .salir:link {
 	color: lightblue;
 }

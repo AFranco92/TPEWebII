@@ -19,7 +19,7 @@
         <td>
           {foreach from=$celular['imagenes'] item=imagen}
           <figure>
-            <img class="fotocelular" src="{$imagen['ruta']}" alt="Imagen del celular {$celular['modelo']}">
+            <img class="fotocelularabm" src="{$imagen['ruta']}" alt="Imagen del celular {$celular['modelo']}">
           </figure> 
           <a class="boton delete" href="deleteImagen/{$imagen['id_imagen']}"><button class="btn btn-md btn-danger btn-block" type="submit">x</button></a>
           {/foreach}

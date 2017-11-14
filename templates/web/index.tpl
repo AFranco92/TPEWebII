@@ -11,11 +11,6 @@
 		<header>
 			<nav class="navbar navbar-inverse">
 			  <div class="container-fluid">
-			  	{foreach from=$usuarios item=usuario}
-			  	{if $usuario['online']}
-			  		<div class="userdiv">Bienvenido <span class="user">{$usuario['usuario']} </span><a class="salir" href="setOffline/{$usuario['id_usuario']}">| Salir |</a></div>
-			  	{/if}
-			  	{/foreach}
 			    <div class="navbar-header">
 			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
 			        <span class="sr-only">Toggle navigation</span>
@@ -57,13 +52,6 @@
 					<a class="linkfooter" href="">Privacidad</a>
 					<a class="linkfooter" href="">Legales</a>
 					<p class="telefono">Tel.: 0249154000000</p>
-					{foreach from=$usuarios item=usuario}
-					{if $usuario['online'] == 1}
-						{if $usuario['administrador'] == 1}
-							<p><a href="indexabm">Panel administrador</a></p>
-						{/if}
-					{/if}
-					{/foreach}
 				</div>			
 			</div>
 		</footer>

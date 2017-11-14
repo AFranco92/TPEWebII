@@ -55,7 +55,7 @@
               </thead>
               <tbody>
                 {foreach from=$celulares item=celular}
-                <tr class="comentariousuario">
+                <tr>
                   {if $celular['id_marca'] == $id_marca}
                   {if $celular['sinstock']}
                   <td>
@@ -97,8 +97,9 @@
       </div>
     </footer>
     <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/mustache.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
-    <script type="text/javascript" src="js/celulares.js"></script>
+    <script type="text/javascript" src="js/partialrender.js"></script>
     <script type="text/javascript" src="js/rest.js"></script>
   </body>
 </html>

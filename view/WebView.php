@@ -33,10 +33,11 @@
 			$this->smarty->display('templates/web/caracteristicas.tpl');
 		}
 
-		function showCaracteristicasCelular($id_celular, $celular, $marcas, $comentarios)
+		function showCaracteristicasCelular($id_celular, $celular, $celulares, $marcas, $comentarios)
 		{
 			$this->smarty->assign('id_celular', $id_celular);
 			$this->smarty->assign('celular', $celular);
+			$this->smarty->assign('celulares', $celulares);
 			$this->smarty->assign('marcas', $marcas);
 			$this->smarty->assign('comentarios', $comentarios);
 			$this->smarty->display('templates/web/caracteristicascelular.tpl');
@@ -47,7 +48,7 @@
 			$this->smarty->display('templates/web/contacto.tpl');
 		}
 
-		function showCelularesFiltrados($celulares, $marcas, $id_marca) 
+		function showCelularesFiltrados($celulares, $marcas, $id_marca)
 		{
 			$this->smarty->assign('id_marca', $id_marca);
 			$this->smarty->assign('celulares', $celulares);
