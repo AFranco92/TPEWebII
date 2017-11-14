@@ -60,7 +60,6 @@ $(document).ready(function() {
 						}
 					});
 				});
-				$(".fk_id_usuario, .fk_usuario").hide();
 			}
 		});
 	});

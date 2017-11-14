@@ -1,41 +1,43 @@
 <?php
-  define('ACTION', 0);
-  define('PARAMS', 1);
+    define('ACTION', 0);
+    define('PARAMS', 1);
   
-  include_once 'config/ConfigApp.php';
-  include_once 'model/Model.php';
-  include_once 'view/View.php';
-  include_once 'controller/Controller.php';
-  include_once 'controller/SecuredController.php';
-  include_once 'controller/CelularesController.php';
-  include_once 'controller/MarcasController.php';
-  include_once 'controller/LoginController.php';
-  include_once 'controller/WebController.php';
-  include_once 'controller/UsuariosController.php';
-  include_once 'controller/ComentariosController.php';  
-  include_once 'controller/ImagenesController.php';  
+    include_once 'config/ConfigApp.php';
+    include_once 'model/Model.php';
+    include_once 'view/View.php';
+    include_once 'controller/Controller.php';
+    include_once 'controller/SecuredController.php';
+    include_once 'controller/CelularesController.php';
+    include_once 'controller/MarcasController.php';
+    include_once 'controller/LoginController.php';
+    include_once 'controller/WebController.php';
+    include_once 'controller/UsuariosController.php';
+    include_once 'controller/ComentariosController.php';  
+    include_once 'controller/ImagenesController.php';  
 
-  function parseURL($url){
-    $urlExploded = explode('/', $url);
-    $arrayReturn[ConfigApp::$ACTION] = $urlExploded[ACTION];
-    $arrayReturn[ConfigApp::$PARAMS] = isset($urlExploded[PARAMS]) ? array_slice($urlExploded,1) : null;
-    return $arrayReturn;
-  }
+    function parseURL($url)
+    {
+        $urlExploded = explode('/', $url);
+        $arrayReturn[ConfigApp::$ACTION] = $urlExploded[ACTION];
+        $arrayReturn[ConfigApp::$PARAMS] = isset($urlExploded[PARAMS]) ? array_slice($urlExploded,1) : null;
+        return $arrayReturn;
+    }
 
-  if(isset($_GET['action'])){
-    $urlData = parseURL($_GET['action']);
-    $action = $urlData[ConfigApp::$ACTION];
-      if(array_key_exists($action,ConfigApp::$ACTIONS)){
-          $params = $urlData[ConfigApp::$PARAMS];
-          $action = explode('#',ConfigApp::$ACTIONS[$action]);
-          $controller =  new $action[0]();
-          $metodo = $action[1];
-          if(isset($params) &&  $params != null){
-            echo $controller->$metodo($params);
-          }
-          else{
-            echo $controller->$metodo();
-          }
-      }
-  }
+    if(isset($_GET['action']))
+    {
+        $urlData = parseURL($_GET['action']);
+        $action = $urlData[ConfigApp::$ACTION];
+        if(array_key_exists($action,ConfigApp::$ACTIONS)){
+            $params = $urlData[ConfigApp::$PARAMS];
+            $action = explode('#',ConfigApp::$ACTIONS[$action]);
+            $controller =  new $action[0]();
+            $metodo = $action[1];
+            if(isset($params) &&  $params != null){
+                echo $controller->$metodo($params);
+            }
+            else{
+                echo $controller->$metodo();
+            }
+        }
+    }
 ?>  

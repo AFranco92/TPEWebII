@@ -1,13 +1,15 @@
 <?php
-	class ConfigApp{
+	class ConfigApp
+    {
     	public static $ACTION = 'action';
     	public static $PARAMS = 'params';
-    	public static $ACTIONS = [ 
+    	public static $ACTIONS = 
+        [ 
             '' => 'WebController#index',
             'sitio' => 'WebController#index',
             'home' => 'WebController#home',
-            'productos' => 'WebController#productos',
             'caracteristicas' => 'WebController#caracteristicas',
+            'caracteristicascelular' => 'WebController#caracteristicascelular',
             'filter' => 'WebController#filter',
             'contacto' => 'WebController#contacto',
             'indexabm' => 'CelularesController#indexabm',

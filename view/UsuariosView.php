@@ -1,5 +1,4 @@
 <?php
-
 	class UsuariosView extends View
 	{
 		function showUsuarios($usuarios)

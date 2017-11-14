@@ -1,5 +1,4 @@
-<?php 
-	
+<?php 	
 	class ComentariosView extends View
 	{
 		function showComentarios($comentarios)

@@ -4,8 +4,8 @@
 	define('LOGOUT', 'http://'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']).'/logout');
 	define('ABM', 'http://'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']).'/indexabm');
 
-	class Controller {
-		
+	class Controller
+	{	
 		protected $model;
 		protected $view;
 	}
