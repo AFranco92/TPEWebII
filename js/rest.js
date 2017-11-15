@@ -9,7 +9,7 @@ $(document).ready(function(){
                 $(".vercaracteristicascelular").on("click", function(){
 
                     let fk_id_celular = this.id;
-                    
+            
                     $.ajax({
                         "url" : "caracteristicascelular",
                         "method" : "GET",
@@ -58,6 +58,7 @@ $(document).ready(function(){
                             function cargarComentarios(){
                                 $.ajax("api/comentarioscelular/"+fk_id_celular)
                                 .done(function(comentarios) {
+                                    $("td.comentario").remove();
                                     for (var key in comentarios) {
                                         $('.comentariousuario').append(crearComentario(comentarios[key]));
                                     }
@@ -66,7 +67,7 @@ $(document).ready(function(){
                                     $('.comentariousuario').append('<td>Imposible cargar los comentarios</td>');
                                 });
                             }
-                            cargarComentarios();
+                            setInterval(cargarComentarios, 2000);
                         }
                     });
                 });            
