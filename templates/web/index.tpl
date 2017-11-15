@@ -57,7 +57,11 @@
 					<a class="linkfooter" href="">Privacidad</a>
 					<a class="linkfooter" href="">Legales</a>
 					<p class="telefono">Tel.: 0249154000000</p>
-					<p><a href="indexabm">Panel administrador</a></p>
+					{foreach from=$usuarios item=usuario}
+						{if $usuario['online'] && $usuario['administrador']}
+							<p><a href="indexabm">Panel administrador</a></p>
+						{/if}
+					{/foreach}
 				</div>			
 			</div>
 		</footer>

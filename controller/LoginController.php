@@ -32,6 +32,7 @@
 	            	session_start();
 	            	$_SESSION['USER'] = $userName;
 	            	$_SESSION['LAST_ACTIVITY'] = time();
+	            	$_SESSION['ADMIN'] = $user[0]['administrador'];
 	            	header('Location: '.HOME);
 	            	$id_usuario = $user[0]['id_usuario'];
     				$this->modelusuarios->setOnline($id_usuario);

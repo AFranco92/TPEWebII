@@ -65,7 +65,7 @@
     {foreach from=$usuarios item=usuario}
     {if $usuario['online'] == 1}
     <h2>Comentar</h2>
-      <p>Comentando como: <span class="writer">{$usuario['usuario']}</span></p>
+      <p>Comentando como: <span class="user">{$usuario['usuario']}</span></p>
       <form class="comentar">
         <select name="fk_puntaje" class="form-control puntaje">
           <option value="" selected disabled hidden>Puntaje</option>

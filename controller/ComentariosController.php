@@ -2,7 +2,7 @@
 	include_once 'model/ComentariosModel.php';
 	include_once 'view/ComentariosView.php';
 
-	class ComentariosController extends Controller
+	class ComentariosController extends SecuredController
 	{
 		function __construct()
 		{
