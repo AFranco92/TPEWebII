@@ -69,7 +69,8 @@
 	  			$id_marca = $_POST['afiltrar'];
 		  		$celulares = $this->modelcelulares->getCelulares();
 		  		$marcas = $this->modelmarcas->getMarcas();
-		  		$this->view->showCelularesFiltrados($celulares, $marcas, $id_marca);
+		  		$imagenes = $this->modelimagenes->getImagenes();
+		  		$this->view->showCelularesFiltrados($celulares, $marcas, $id_marca, $imagenes);
 		  	}
 	  	}
 	}

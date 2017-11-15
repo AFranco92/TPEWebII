@@ -1,5 +1,5 @@
 {{#arreglo}}
-	<td class="comentario">
+	<div class="comentario">
 		<section>
 			<div class='panel panel-default'>
 				<div class="panel-heading" id="{{fk_id_celular}}">
@@ -9,8 +9,9 @@
 				<div class='panel-body'>
 					<section>
 		    			{{textocomentario}}
+		    		</section>	
 		 		</div>
 			</div>
 		</section>
-	</td>
+	</div>
 {{/arreglo}}

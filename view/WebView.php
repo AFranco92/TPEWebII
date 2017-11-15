@@ -50,11 +50,12 @@
 			$this->smarty->display('templates/web/contacto.tpl');
 		}
 
-		function showCelularesFiltrados($celulares, $marcas, $id_marca)
+		function showCelularesFiltrados($celulares, $marcas, $id_marca, $imagenes)
 		{
 			$this->smarty->assign('id_marca', $id_marca);
 			$this->smarty->assign('celulares', $celulares);
 			$this->smarty->assign('marcas', $marcas);
+			$this->smarty->assign('celulares', $celulares);
 			$this->smarty->display('templates/web/filtrocelulares.tpl');
 		}
 	}

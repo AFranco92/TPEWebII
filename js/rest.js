@@ -25,10 +25,6 @@ $(document).ready(function(){
                                 $('.comentariousuario').append(rendered);
                             }
 
-                            $(".comment").on("click", function() {
-                                alert("anda botón");
-                            });
-
                             // function guardarComentario(comentario) {
                             //     $.ajax({
                             //         "method": "POST",
@@ -39,7 +35,7 @@ $(document).ready(function(){
                             //         console.log(comentario);
                             //         crearComentario(comentario);
                             //     })
-                            //     .fail(function() {
+                            //     .fail(function() {   
                             //         alert("Error al guardar comentario");
                             //     });
                             // }
@@ -62,7 +58,7 @@ $(document).ready(function(){
                             function cargarComentarios(){
                                 $.ajax("api/comentarioscelular/"+fk_id_celular)
                                 .done(function(comentarios) {
-                                    $("td.comentario").remove();
+                                    $(".comentario").remove();
                                     for (var key in comentarios) {
                                         $('.comentariousuario').append(crearComentario(comentarios[key]));
                                     }
@@ -71,7 +67,7 @@ $(document).ready(function(){
                                     $('.comentariousuario').append('<td>Imposible cargar los comentarios</td>');
                                 });
                             }
-                            setInterval(cargarComentarios, 2000);
+                            cargarComentarios();
                         }
                     });
                 });            
@@ -79,48 +75,3 @@ $(document).ready(function(){
         }); 
     });   
 });
-
-    // let templateComentario;
-
-    // $.ajax({ url: 'js/templates/comentario.mst'}).done( template => templateComentario = template);
-
-    // function cargarComentarios() {
-    //     $.ajax("api/comentarioscelular"+fk_id_celular)
-    //     .done(function(comentarios) {
-    //         let rendered = Mustache.render(templateTarea, comentarios);
-    //         $('.comentariousuario').append(rendered);
-    //     })
-    //     .fail(function() {
-    //         $('.comentariousuario').append('<td>Imposible cargar los comentarios</td>');
-    //     });
-    // }
-
-    // function crearComentario() {
-    //     let comentario = {
-    //         "fk_puntaje" : $(".fk_puntaje").val(),
-    //         "fk_id_celular" : $(".fk_id_celular").val(),
-    //         "fk_id_usuario" : $(".fk_id_usuario").val(),
-    //         "fk_usuario" : $(".fk_usuario").val(),
-    //         "textocomentario" : $(".textocomentario").val()
-    //     };
-
-    //     $.ajax({
-    //         method: "POST",
-    //         url: "api/comentarios",
-    //         data: JSON.stringify(comentario)
-    //     })
-    //     .done(function(data) {
-    //       let rendered = Mustache.render(templateComentario , data);
-    //       $('.comentariousuario').append(rendered);
-    //     })
-    //     .fail(function(data) {
-    //         console.log(data);
-    //         alert('No se pudo crear el comentario');
-    //     });
-    // }
-
-    // $('.comment').click(function(event){
-    //     event.preventDefault();
-    //     crearComentario();
-    // });
-    // cargarComentarios();
