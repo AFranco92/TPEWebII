@@ -18,15 +18,15 @@
 			$this->view->showUsuarios($usuarios);
 		}
 
-	  	public function verify()
+	  	private function verify()
 	  	{
 	  		$usuario = $this->model->getUsuario($id_usuario);
-	      	$userName = $_POST['usuario'];
-	      	$password = $_POST['password'];
+	      	$userName = $_POST['usertoregister'];
+	      	$password = $_POST['passwordtoregister'];
 
 	      	if(!empty($userName) && !empty($password))
 	      	{
-	        	$user = $this->model->getUser($userName);
+	        	$user = $this->modellogin->getUser($userName);
 	        	if((!empty($user)) && password_verify($password, $user[0]['password']))
 	        	{
 	            	session_start();
