@@ -19,6 +19,11 @@
 			        <span class="icon-bar"></span>
 			      </button>
 			      <a class="navbar-brand cargarhome" href="#">SIᕮᖇᖇᗩᑕᕮᒪ</a>
+			      	{foreach from=$usuarios item=usuario}
+				      {if $usuario['online']}
+				      <p class="usuariologueado">Bienvenido <span class="user">{$usuario['usuario']}</span></p><a href="setOffline/{$usuario['id_usuario']}">Salir</a>
+				      {/if}
+				    {/foreach}  
 			    </div>
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			      <ul class="nav navbar-nav">

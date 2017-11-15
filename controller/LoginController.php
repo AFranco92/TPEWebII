@@ -33,6 +33,8 @@
 	            	$_SESSION['USER'] = $userName;
 	            	$_SESSION['LAST_ACTIVITY'] = time();
 	            	header('Location: '.HOME);
+	            	$id_usuario = $user[0]['id_usuario'];
+    				$this->modelusuarios->setOnline($id_usuario);
 	        	}
 	        	else
 	        	{

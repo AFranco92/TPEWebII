@@ -81,18 +81,13 @@
     		header('Location: '.ABM);
   		}
 
-  		public function setOnline($params) 
-		{
-    		$id_usuario = $params[0];
-    		$this->model->setOnline($id_usuario);
-    		header('Location: '.HOME);
-  		}
-
   		public function setOffline($params) 
 		{
     		$id_usuario = $params[0];
     		$this->model->setOffline($id_usuario);
     		header('Location: '.HOME);
+    		session_start();
+			session_destroy();
   		}
 
 		public function destroy($params)

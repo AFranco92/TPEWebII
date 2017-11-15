@@ -31,7 +31,6 @@
             'deleteUsuario' => 'UsuariosController#destroy',
             'setAdmin' => 'UsuariosController#setAdmin',
             'setNoAdmin' => 'UsuariosController#setNoAdmin',
-            'setOnline' => 'UsuariosController#setOnline',
             'setOffline' => 'UsuariosController#setOffline',
             'abmcomentarios' => 'ComentariosController#index',
             'deleteComentario' => 'ComentariosController#destroy',
