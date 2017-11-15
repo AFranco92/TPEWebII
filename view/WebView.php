@@ -56,6 +56,7 @@
 			$this->smarty->assign('celulares', $celulares);
 			$this->smarty->assign('marcas', $marcas);
 			$this->smarty->assign('celulares', $celulares);
+			$this->smarty->assign('imagenes', $imagenes);
 			$this->smarty->display('templates/web/filtrocelulares.tpl');
 		}
 	}

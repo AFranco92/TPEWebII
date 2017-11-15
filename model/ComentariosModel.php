@@ -33,7 +33,7 @@
 		function setComentario($fk_id_usuario, $fk_usuario, $fk_id_celular, $fk_puntaje, $textocomentario)
 		{
 			$sentencia = $this->db->prepare('INSERT INTO Comentario(fk_id_usuario, fk_usuario, fk_id_celular, fk_puntaje, textocomentario) VALUES(?,?,?,?,?)');
-			$sentencia->execute([$fk_id_usuario, $fk_usuario, $fk_id_celular, $fk_puntaje, $textocomentario]);
+			return $sentencia->execute([$fk_id_usuario, $fk_usuario, $fk_id_celular, $fk_puntaje, $textocomentario]);
 		}
 
 		function deleteComentario($id_comentario)

@@ -25,35 +25,37 @@ $(document).ready(function(){
                                 $('.comentariousuario').append(rendered);
                             }
 
-                            // function guardarComentario(comentario) {
-                            //     $.ajax({
-                            //         "method": "POST",
-                            //         "data": comentario,
-                            //         "url": "api/comentarios"
-                            //     })
-                            //     .done(function(comentario) {
-                            //         console.log(comentario);
-                            //         crearComentario(comentario);
-                            //     })
-                            //     .fail(function() {   
-                            //         alert("Error al guardar comentario");
-                            //     });
-                            // }
+                            function guardarComentario(comentario) {
+                                $.ajax({
+                                    "method": "POST",
+                                    "data": comentario,
+                                    "url": "api/comentarios",
+                                    "contentType" : "application/json",
+                                    "dataType" : "JSON"
+                                })
+                                .done(function(comentario) {
+                                    console.log(comentario);
+                                    crearComentario(comentario);
+                                })
+                                .fail(function() {   
+                                    alert("Error al guardar comentario");
+                                });
+                            }
 
-                            // function getFormData($form){
-                            //     let unindexed_array = $form.serializeArray();
-                            //     let indexed_array = {};
-                            //     $.map(unindexed_array, function(n, i){
-                            //         indexed_array[n['name']] = n['value'];
-                            //     });
-                            //     return indexed_array;
-                            // }
+                            function getFormData($form){
+                                let unindexed_array = $form.serializeArray();
+                                let indexed_array = {};
+                                $.map(unindexed_array, function(n, i){
+                                    indexed_array[n['name']] = n['value'];
+                                });
+                                return indexed_array;
+                            }
 
-                            // $(".comentar").submit(function(event){
-                            //     event.preventDefault();
-                            //     formData = JSON.stringify(getFormData($(this)));
-                            //     guardarComentario(formData);
-                            // });
+                            $(".comentar").submit(function(event){
+                                event.preventDefault();
+                                formData = JSON.stringify(getFormData($(this)));
+                                guardarComentario(formData);
+                            });
 
                             function cargarComentarios(){
                                 $.ajax("api/comentarioscelular/"+fk_id_celular)
@@ -67,7 +69,7 @@ $(document).ready(function(){
                                     $('.comentariousuario').append('<td>Imposible cargar los comentarios</td>');
                                 });
                             }
-                            cargarComentarios();
+                            //setInterval(cargarComentarios, 2000);
                         }
                     });
                 });            

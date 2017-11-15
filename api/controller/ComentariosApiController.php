@@ -55,7 +55,7 @@
             $fk_puntaje = $body->fk_puntaje;
             $textocomentario = $body->textocomentario;
             $comentario = $this->model->setComentario($fk_id_usuario, $fk_usuario, $fk_id_celular, $fk_puntaje, $textocomentario);
-            return $this->json_response($comentario, 200);
+            return $this->json_response($body, 200);
         }
 
         public function deleteComentario($url_params = [])
