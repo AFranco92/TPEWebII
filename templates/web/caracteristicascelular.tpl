@@ -60,6 +60,7 @@
       </tr>
   </tbody>
 </table>
+<p class="aviso">¡Para comentar hay que estar logueado!</p>
 <div class="row">
   <div class="col-md-5">
     {foreach from=$usuarios item=usuario}

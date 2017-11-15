@@ -260,3 +260,9 @@ footer {
 .usuariologueado {
 	color: white;
 }
+.aviso {
+	font-weight: bold;
+}
+.fotocelular:hover {
+	max-width: 150%;
+}
