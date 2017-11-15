@@ -17,9 +17,6 @@
         <li><a class="abmUsuarios" href="#">BM Usuarios</a></li>
         <li><a class="abmComentarios" href="#">B Comentarios</a></li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a class="logout" href="logout">Salir</a></li>
-      </ul>
     </div>
   </div>
 </nav>

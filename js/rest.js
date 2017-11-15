@@ -25,35 +25,39 @@ $(document).ready(function(){
                                 $('.comentariousuario').append(rendered);
                             }
 
-                            function guardarComentario(comentario) {
-                                $.ajax({
-                                    "method": "POST",
-                                    "data": comentario,
-                                    "url": "api/comentarios"
-                                })
-                                .done(function(comentario) {
-                                    console.log(comentario);
-                                    crearComentario(comentario);
-                                })
-                                .fail(function() {
-                                    alert("Error al guardar comentario");
-                                });
-                            }
-
-                            function getFormData($form){
-                                let unindexed_array = $form.serializeArray();
-                                let indexed_array = {};
-                                $.map(unindexed_array, function(n, i){
-                                    indexed_array[n['name']] = n['value'];
-                                });
-                                return indexed_array;
-                            }
-
-                            $(".comentar").submit(function(event){
-                                event.preventDefault();
-                                formData = JSON.stringify(getFormData($(this)));
-                                guardarComentario(formData);
+                            $(".comment").on("click", function() {
+                                alert("anda botón");
                             });
+
+                            // function guardarComentario(comentario) {
+                            //     $.ajax({
+                            //         "method": "POST",
+                            //         "data": comentario,
+                            //         "url": "api/comentarios"
+                            //     })
+                            //     .done(function(comentario) {
+                            //         console.log(comentario);
+                            //         crearComentario(comentario);
+                            //     })
+                            //     .fail(function() {
+                            //         alert("Error al guardar comentario");
+                            //     });
+                            // }
+
+                            // function getFormData($form){
+                            //     let unindexed_array = $form.serializeArray();
+                            //     let indexed_array = {};
+                            //     $.map(unindexed_array, function(n, i){
+                            //         indexed_array[n['name']] = n['value'];
+                            //     });
+                            //     return indexed_array;
+                            // }
+
+                            // $(".comentar").submit(function(event){
+                            //     event.preventDefault();
+                            //     formData = JSON.stringify(getFormData($(this)));
+                            //     guardarComentario(formData);
+                            // });
 
                             function cargarComentarios(){
                                 $.ajax("api/comentarioscelular/"+fk_id_celular)

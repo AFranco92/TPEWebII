@@ -47,10 +47,9 @@
           <table class="table table-striped">
               <thead>
                 <tr>
+                  <th>Fotos</th>
+                  <th>Marca</th>
                   <th>Modelo</th>
-                  <th>Características</th>
-                  <th>Precio</th>
-                  <th>Comentarios</th>
                 </tr>
               </thead>
               <tbody>

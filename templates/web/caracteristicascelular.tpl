@@ -12,14 +12,12 @@
   <tbody> 
       <tr class="comentariousuario" id="{$celular['id_celular']}">
           <td>
-            {foreach from=$celulares item=celular}
-              {foreach from=$celular['imagenes'] item=imagen}
+            {foreach from=$imagenes item=imagen}
                 {if $celular['id_celular'] == $imagen['fk_id_celular']}
                   <figure>
-                    <img class="fotocelular" src="{$imagen['ruta']}" alt="Imagen del celular {$celular['modelo']}">
+                    <img class="fotocelularelegido" src="{$imagen['ruta']}" alt="Imagen del celular {$celular['modelo']}">
                   </figure>
                 {/if}  
-              {/foreach}
             {/foreach}  
           </td> 
           {if $celular['sinstock']}
@@ -67,7 +65,7 @@
     {if $usuario['online'] == 1}
     <h2>Comentar</h2>
       <p>Comentando como: <span class="user">{$usuario['usuario']}</span></p>
-      <form class="comentar">
+      <form class="comentar" method="POST">
         <select name="fk_puntaje" class="form-control puntaje">
           <option value="" selected disabled hidden>Puntaje</option>
           <option value="1">1</option>

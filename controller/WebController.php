@@ -4,6 +4,7 @@
 	include_once 'model/MarcasModel.php';
 	include_once 'model/UsuariosModel.php';
 	include_once 'model/ComentariosModel.php';
+	include_once 'model/ImagenesModel.php';
 
 	class WebController extends Controller
 	{
@@ -15,6 +16,7 @@
 	    	$this->modelmarcas = new MarcasModel();
 	    	$this->modelusuarios = new UsuariosModel();
 	    	$this->modelcomentarios = new ComentariosModel();
+	    	$this->modelimagenes = new ImagenesModel();
 	  	}
 
 	  	public function index()
@@ -36,7 +38,8 @@
 		  	$usuarios = $this->modelusuarios->getUsuarios();
 		  	$marcas = $this->modelmarcas->getMarcas();
 		  	$comentarios = $this->modelcomentarios->getComentarios();
-		  	$this->view->showCaracteristicasCelular($id_celular, $celular, $celulares, $usuarios, $marcas, $comentarios);
+		  	$imagenes = $this->modelimagenes->getImagenes();
+		  	$this->view->showCaracteristicasCelular($id_celular, $celular, $celulares, $usuarios, $marcas, $comentarios, $imagenes);
 	  	}
 
 	  	public function comentarios()

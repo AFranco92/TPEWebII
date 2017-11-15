@@ -237,7 +237,10 @@ footer {
 	color: black;
 }
 .fotocelular {
-	max-width: 15%;
+	max-width: 20%;
+}
+.fotocelularelegido {
+	max-width: 150%;
 }
 .fotocelularabm {
 	max-width: 200%;
@@ -265,4 +268,7 @@ footer {
 }
 .fotocelular:hover {
 	max-width: 150%;
+}
+.fotocelularelegido:hover {
+	max-width: 500%;
 }
