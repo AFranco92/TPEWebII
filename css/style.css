@@ -82,7 +82,7 @@ span {
 }
 a:hover {
 	text-decoration: none;
-	color: blue;
+	color: red;
 }
 a:link {
 	color: black;
@@ -232,15 +232,6 @@ footer {
 	background-color: #222345;
 	height: 120%;
 }
-.userdiv {
-	color: white;
-	font-weight: bold;
-}
-.usuariologueado, .writer {
-	color: #FF7400;
-	font-size: 125%;
-	font-weight: bold;
-}
 .panel {
 	border-color: black;
 	color: black;
@@ -260,4 +251,12 @@ footer {
 .fk_puntaje {
 	color: #FFAA00;
 	font-weight: bold;	
+}
+.user {
+	color: orange;
+	font-weight: bold;
+	font-size: 125%;
+}
+.usuariologueado {
+	color: white;
 }

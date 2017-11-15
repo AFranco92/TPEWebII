@@ -21,7 +21,7 @@
 			      <a class="navbar-brand cargarhome" href="#">SIᕮᖇᖇᗩᑕᕮᒪ</a>
 			      	{foreach from=$usuarios item=usuario}
 				      {if $usuario['online']}
-				      <p class="usuariologueado">Bienvenido <span class="user">{$usuario['usuario']}</span></p><a href="setOffline/{$usuario['id_usuario']}">Salir</a>
+				      <p class="usuariologueado">Bienvenido <span class="user">{$usuario['usuario']}</span><a class="salir" href="setOffline/{$usuario['id_usuario']}"> | Salir |</a></p>
 				      {/if}
 				    {/foreach}  
 			    </div>
