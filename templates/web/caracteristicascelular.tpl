@@ -12,15 +12,15 @@
   <tbody> 
       <tr class="comentariousuario" id="{$celular['id_celular']}">
           <td>
-          {foreach from=$celulares item=celular}
-            {foreach from=$celular['imagenes'] item=imagen}
-              {if $celular['id_celular'] == $imagen['fk_id_celular']}
-                <figure>
-                  <img class="fotocelular" src="{$imagen['ruta']}" alt="Imagen del celular {$celular['modelo']}">
-                </figure>
-              {/if}  
-              {/foreach}   
-            {/foreach} 
+            {foreach from=$celulares item=celular}
+              {foreach from=$celular['imagenes'] item=imagen}
+                {if $celular['id_celular'] == $imagen['fk_id_celular']}
+                  <figure>
+                    <img class="fotocelular" src="{$imagen['ruta']}" alt="Imagen del celular {$celular['modelo']}">
+                  </figure>
+                {/if}  
+              {/foreach}
+            {/foreach}  
           </td> 
           {if $celular['sinstock']}
               {foreach from=$marcas item=marca}
@@ -74,11 +74,11 @@
           <option value="3">3</option>
           <option value="4">4</option>
           <option value="5">5</option>
-        </select>    
+        </select>
         <input class="form-control fk_id_celular" type="hidden" name="fk_id_celular" placeholder="Id celular" value="{$celular['id_celular']}">
         <input class="form-control fk_id_usuario" type="hidden" name="fk_id_usuario" placeholder="Id usuario" value="{$usuario['id_usuario']}">
         <input class="form-control fk_usuario" type="hidden" name="fk_usuario" placeholder="Usuario" value="{$usuario['usuario']}">
-        <textarea class="form-control textocomentario" cols="10" rows="5" name="textocomentario"></textarea>
+        <textarea class="form-control textocomentario" cols="10" rows="5" name="textocomentario" placeholder="Comentario"></textarea>
         <button class="btn btn-lg btn-primary btn-block comment" type="submit">Comentar</button>
       </form>
     {/if}

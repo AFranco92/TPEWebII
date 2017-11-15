@@ -48,24 +48,14 @@
 
         public function createComentario($url_params = [])
         {
-            session_start();
-            if(isset($_SESSION['USER']))
-            {
-                $body = json_decode($this->raw_data);
-                $fk_id_usuario = $body->fk_id_usuario;
-                $fk_usuario = $body->fk_usuario;
-                $fk_id_celular = $body->fk_id_celular;
-                $fk_puntaje = $body->fk_puntaje;
-                $textocomentario = $body->textocomentario;
-                $comentario = $this->model->setComentario($fk_id_usuario, $fk_usuario, $fk_id_celular, $fk_puntaje, $textocomentario);
-                return $this->json_response($comentario, 200);
-                if (time() - $_SESSION['LAST_ACTIVITY'] > 400)
-                {
-                    header('Location: '.LOGOUT);
-                    die();
-                }
-                $_SESSION['LAST_ACTIVITY'] = time();
-            }
+            $body = json_decode($this->raw_data);
+            $fk_id_usuario = $body->fk_id_usuario;
+            $fk_usuario = $body->fk_usuario;
+            $fk_id_celular = $body->fk_id_celular;
+            $fk_puntaje = $body->fk_puntaje;
+            $textocomentario = $body->textocomentario;
+            $comentario = $this->model->setComentario($fk_id_usuario, $fk_usuario, $fk_id_celular, $fk_puntaje, $textocomentario);
+            return $this->json_response($comentario, 200);
         }
 
         public function deleteComentario($url_params = [])
