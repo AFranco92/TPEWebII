@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 16-11-2017 a las 03:24:22
+-- Tiempo de generación: 16-11-2017 a las 03:43:02
 -- Versión del servidor: 10.1.24-MariaDB
 -- Versión de PHP: 7.1.6
 
@@ -630,7 +630,7 @@ CREATE TABLE `pma__recent` (
 --
 
 INSERT INTO `pma__recent` (`username`, `tables`) VALUES
-('root', '[{\"db\":\"db_celulares\",\"table\":\"Celular\"},{\"db\":\"db_celulares\",\"table\":\"Comentario\"},{\"db\":\"db_celulares\",\"table\":\"Usuario\"},{\"db\":\"db_celulares\",\"table\":\"Imagen\"},{\"db\":\"db_celulares\",\"table\":\"Marca\"},{\"db\":\"db_tareas\",\"table\":\"tarea\"},{\"db\":\"db_tarjetas\",\"table\":\"producto\"},{\"db\":\"db_fotos\",\"table\":\"Foto\"},{\"db\":\"db_figuras\",\"table\":\"circulo\"},{\"db\":\"db_figuras\",\"table\":\"cuadrado\"}]');
+('root', '[{\"db\":\"db_celulares\",\"table\":\"Comentario\"},{\"db\":\"db_celulares\",\"table\":\"Celular\"},{\"db\":\"db_celulares\",\"table\":\"Imagen\"},{\"db\":\"db_celulares\",\"table\":\"Usuario\"},{\"db\":\"db_celulares\",\"table\":\"Marca\"},{\"db\":\"db_tareas\",\"table\":\"tarea\"},{\"db\":\"db_tarjetas\",\"table\":\"producto\"},{\"db\":\"db_fotos\",\"table\":\"Foto\"},{\"db\":\"db_figuras\",\"table\":\"circulo\"},{\"db\":\"db_figuras\",\"table\":\"cuadrado\"}]');
 
 -- --------------------------------------------------------
 

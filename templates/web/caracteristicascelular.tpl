@@ -69,7 +69,7 @@
     <h2>Comentar</h2>
       <p>Comentando como: <span class="user">{$usuario['usuario']}</span></p>
       <form class="comentar" action="api/comentarios" method="POST">
-        <select name="fk_puntaje" class="form-control puntaje">
+        <select name="fk_puntaje" class="form-control puntaje" required>
           <option value="" selected disabled hidden>Puntaje</option>
           <option value="1">1</option>
           <option value="2">2</option>
@@ -80,7 +80,7 @@
         <input class="form-control fk_id_celular" type="hidden" name="fk_id_celular" placeholder="Id celular" value="{$celular['id_celular']}">
         <input class="form-control fk_id_usuario" type="hidden" name="fk_id_usuario" placeholder="Id usuario" value="{$usuario['id_usuario']}">
         <input class="form-control fk_usuario" type="hidden" name="fk_usuario" placeholder="Usuario" value="{$usuario['usuario']}">
-        <textarea class="form-control textocomentario" cols="10" rows="5" name="textocomentario" placeholder="Comentario"></textarea>
+        <textarea class="form-control textocomentario" cols="10" rows="5" name="textocomentario" placeholder="Comentario" required></textarea>
         <button class="btn btn-lg btn-primary btn-block comment" type="submit">Comentar</button>
       </form>
     {/if}
