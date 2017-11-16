@@ -48,7 +48,6 @@
               <thead>
                 <tr>
                   <th>Fotos</th>
-                  <th>Marca</th>
                   <th>Modelo</th>
                 </tr>
               </thead>
@@ -56,29 +55,17 @@
                 {foreach from=$celulares item=celular}
                 <tr>
                   {if $celular['id_marca'] == $id_marca}
-                  {if $celular['sinstock']}
-                  <td>
-                    {foreach from=$celular['imagenes'] item=imagen}
-                    <figure>
-                        <a class="vercaracteristicascelular" href="#" id="{$celular['id_celular']}"><img class="fotocelular" src="{$imagen['ruta']}" alt="Imagen del celular {$celular['modelo']}"></a>
-                    </figure>
-                    {/foreach}
-                  </td>
-                  <td>
-                    {$marca['nombre']}
-                  </td>
-                  <td>
-                    {$celular['modelo']}
-                  </td>
-                  {else}
-                  <td>
-                    {$marca['nombre']}
-                  </td>
-                  <td>
-                    {$celular['modelo']}
-                  </td>
-                  {/if}
-                  {/if}
+                    <td>
+                      {foreach from=$celular['imagenes'] item=imagen}
+                        <figure>
+                          <a class="vercaracteristicascelular" href="#" id="{$celular['id_celular']}"><img class="fotocelular" src="{$imagen['ruta']}" alt="Imagen del celular {$celular['modelo']}"></a>
+                        </figure>
+                      {/foreach}
+                    </td>
+                    <td>
+                      {$celular['modelo']}
+                    </td>
+                  {/if}  
                 </tr>
               {/foreach}
             </tbody>

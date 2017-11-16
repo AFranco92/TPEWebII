@@ -1,11 +1,12 @@
 $(document).ready(function(){
 
-    $(".cargarcaracteristicas, .dofilter").on("click", function() {
+    $(".cargarcaracteristicas").on("click", function() {
         $.ajax({
             "url" : "caracteristicas",
             "method" : "GET",
             "dataType" : "HTML",
             "success" : function(data) {
+
                 $(".vercaracteristicascelular").on("click", function(){
 
                     let fk_id_celular = this.id;
@@ -66,14 +67,20 @@ $(document).ready(function(){
                                     }
                                 })
                                 .fail(function() {
-                                    $('.comentariousuario').append('<td>Imposible cargar los comentarios</td>');
+                                    $('.comentariousuario').append('<div>Imposible cargar los comentarios</div>');
                                 });
+                                clearInterval(timer);
                             }
-                            //setInterval(cargarComentarios, 2000);
+                            
+                            function load(){
+                                cargarComentarios();
+                            }
+                            
+                            let timer = setInterval(load, 2000);
                         }
-                    });
-                });            
-            }
-        }); 
-    });   
+                    });            
+                });
+            } 
+        });   
+    });
 });
