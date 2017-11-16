@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 14-11-2017 a las 21:29:01
+-- Tiempo de generación: 16-11-2017 a las 03:24:22
 -- Versión del servidor: 10.1.24-MariaDB
 -- Versión de PHP: 7.1.6
 
@@ -77,7 +77,9 @@ CREATE TABLE `Comentario` (
 
 INSERT INTO `Comentario` (`id_comentario`, `fk_id_usuario`, `fk_usuario`, `fk_id_celular`, `fk_puntaje`, `textocomentario`) VALUES
 (6, 1, 'profesor', 22, 5, 'aaaaaaa'),
-(7, 1, 'profesor', 23, 2, 'malaso');
+(7, 1, 'profesor', 23, 2, 'malaso'),
+(11, 1, 'profesor', 24, 5, 'muy lindo celular'),
+(12, 7, 'carlos', 22, 1, 'dura poco la batería');
 
 -- --------------------------------------------------------
 
@@ -102,10 +104,7 @@ INSERT INTO `Imagen` (`id_imagen`, `fk_id_celular`, `ruta`) VALUES
 (21, 30, 'images/5a052b60dc634.jpg'),
 (22, 27, 'images/5a052b7c32c8c.jpg'),
 (23, 28, 'images/5a052b8773d37.jpg'),
-(29, 22, 'images/5a0a13e6076e2.jpg'),
-(31, 25, 'images/5a0b3ddd6eb9d.jpg'),
-(32, 25, 'images/5a0b3ddd6ec0b.jpg'),
-(33, 25, 'images/5a0b3ddd6ec58.jpg');
+(29, 22, 'images/5a0a13e6076e2.jpg');
 
 -- --------------------------------------------------------
 
@@ -149,7 +148,8 @@ CREATE TABLE `Usuario` (
 --
 
 INSERT INTO `Usuario` (`id_usuario`, `usuario`, `mail`, `password`, `administrador`, `online`) VALUES
-(1, 'profesor', 'profesor@tudai.com.ar', '$2y$10$oqywdLKj3LiswzLVXaW0X.MHz9sKVlq7NhQESSLEypL9YDJn1aEf6', 1, 0);
+(1, 'profesor', 'profesor@tudai.com.ar', '$2y$10$oqywdLKj3LiswzLVXaW0X.MHz9sKVlq7NhQESSLEypL9YDJn1aEf6', 1, 0),
+(7, 'carlos', 'carlos@tudai.com', '$2y$10$FuHFCkC/wYld4tR558hEU.vsB2obi0FOo7kL58WM/.u8uFr8gGt3C', 0, 0);
 
 --
 -- Índices para tablas volcadas
@@ -162,7 +162,8 @@ ALTER TABLE `Celular`
   ADD PRIMARY KEY (`id_celular`),
   ADD KEY `id_marca` (`id_marca`),
   ADD KEY `modelo` (`modelo`),
-  ADD KEY `puntaje` (`puntaje`);
+  ADD KEY `puntaje` (`puntaje`),
+  ADD KEY `imagenes` (`imagenes`);
 
 --
 -- Indices de la tabla `Comentario`
@@ -179,7 +180,8 @@ ALTER TABLE `Comentario`
 --
 ALTER TABLE `Imagen`
   ADD PRIMARY KEY (`id_imagen`),
-  ADD KEY `fk_id_celular` (`fk_id_celular`);
+  ADD KEY `fk_id_celular` (`fk_id_celular`),
+  ADD KEY `ruta` (`ruta`);
 
 --
 -- Indices de la tabla `Marca`
@@ -209,12 +211,12 @@ ALTER TABLE `Celular`
 -- AUTO_INCREMENT de la tabla `Comentario`
 --
 ALTER TABLE `Comentario`
-  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT de la tabla `Imagen`
 --
 ALTER TABLE `Imagen`
-  MODIFY `id_imagen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id_imagen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 --
 -- AUTO_INCREMENT de la tabla `Marca`
 --
@@ -224,7 +226,7 @@ ALTER TABLE `Marca`
 -- AUTO_INCREMENT de la tabla `Usuario`
 --
 ALTER TABLE `Usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- Restricciones para tablas volcadas
 --
@@ -628,7 +630,7 @@ CREATE TABLE `pma__recent` (
 --
 
 INSERT INTO `pma__recent` (`username`, `tables`) VALUES
-('root', '[{\"db\":\"db_celulares\",\"table\":\"Celular\"},{\"db\":\"db_celulares\",\"table\":\"Comentario\"},{\"db\":\"db_celulares\",\"table\":\"Usuario\"},{\"db\":\"db_celulares\",\"table\":\"Imagen\"},{\"db\":\"db_tareas\",\"table\":\"tarea\"},{\"db\":\"db_tarjetas\",\"table\":\"producto\"},{\"db\":\"db_celulares\",\"table\":\"Marca\"},{\"db\":\"db_fotos\",\"table\":\"Foto\"},{\"db\":\"db_figuras\",\"table\":\"circulo\"},{\"db\":\"db_figuras\",\"table\":\"cuadrado\"}]');
+('root', '[{\"db\":\"db_celulares\",\"table\":\"Celular\"},{\"db\":\"db_celulares\",\"table\":\"Comentario\"},{\"db\":\"db_celulares\",\"table\":\"Usuario\"},{\"db\":\"db_celulares\",\"table\":\"Imagen\"},{\"db\":\"db_celulares\",\"table\":\"Marca\"},{\"db\":\"db_tareas\",\"table\":\"tarea\"},{\"db\":\"db_tarjetas\",\"table\":\"producto\"},{\"db\":\"db_fotos\",\"table\":\"Foto\"},{\"db\":\"db_figuras\",\"table\":\"circulo\"},{\"db\":\"db_figuras\",\"table\":\"cuadrado\"}]');
 
 -- --------------------------------------------------------
 
@@ -706,7 +708,7 @@ CREATE TABLE `pma__table_uiprefs` (
 INSERT INTO `pma__table_uiprefs` (`username`, `db_name`, `table_name`, `prefs`, `last_update`) VALUES
 ('root', 'db_celulares', 'Celular', '[]', '2017-09-26 16:19:42'),
 ('root', 'db_celulares', 'Marca', '{\"sorted_col\":\"`Marca`.`id_marca`  ASC\"}', '2017-10-19 02:25:43'),
-('root', 'db_celulares', 'Usuario', '{\"sorted_col\":\"`id_usuario` ASC\"}', '2017-11-14 19:00:40');
+('root', 'db_celulares', 'Usuario', '{\"sorted_col\":\"`id_usuario` ASC\"}', '2017-11-14 22:13:10');
 
 -- --------------------------------------------------------
 
@@ -911,7 +913,7 @@ ALTER TABLE `pma__column_info`
 -- AUTO_INCREMENT de la tabla `pma__export_templates`
 --
 ALTER TABLE `pma__export_templates`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `pma__history`
 --
