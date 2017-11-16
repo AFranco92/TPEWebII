@@ -71,7 +71,6 @@
                     {$celular['modelo']}
                   </td>
                   {else}
-                  <td>imagen</td>
                   <td>
                     {$marca['nombre']}
                   </td>
